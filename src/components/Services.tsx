@@ -78,14 +78,14 @@ export const Services: React.FC = () => {
           </p>
         </div>
 
-        {/* Services Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Services Cards Flex Layout (Centered bottom row) */}
+        <div className="flex flex-wrap justify-center gap-8">
           {services.map((service) => {
             const IconComponent = service.icon;
             return (
               <div
                 key={service.id}
-                className="group relative bg-white hover:bg-[#FAF7F2] border border-[#E8DEC8] hover:border-[#C9A86A] rounded-2xl overflow-hidden transition-all duration-300 shadow-celestial-card flex flex-col justify-between"
+                className="group relative bg-white hover:bg-[#FAF7F2] border border-[#E8DEC8] hover:border-[#C9A86A] rounded-2xl overflow-hidden transition-all duration-300 shadow-celestial-card flex flex-col justify-between w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md lg:max-w-none"
               >
                 {/* Top Image Banner */}
                 <div className="relative w-full h-52 overflow-hidden bg-[#4B2E5E]/10">
