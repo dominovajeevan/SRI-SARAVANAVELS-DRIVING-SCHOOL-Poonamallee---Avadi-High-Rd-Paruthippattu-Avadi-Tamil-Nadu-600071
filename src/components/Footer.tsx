@@ -83,7 +83,7 @@ export const Footer: React.FC = () => {
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#C9A86A] shrink-0" />
                 <a href={TEL_LINK} className="text-white hover:text-[#E7D4A8] font-bold text-sm font-mono">
-                  📞 {PHONE_NUMBER}
+                  {PHONE_NUMBER}
                 </a>
               </div>
 

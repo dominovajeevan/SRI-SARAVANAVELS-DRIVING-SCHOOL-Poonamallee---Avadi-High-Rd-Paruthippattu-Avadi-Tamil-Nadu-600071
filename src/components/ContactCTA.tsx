@@ -37,7 +37,7 @@ export const ContactCTA: React.FC = () => {
                   href={TEL_LINK}
                   className="text-2xl font-black text-[#4B2E5E] hover:text-[#C9A86A] tracking-wider transition-colors block mt-0.5"
                 >
-                  📞 {PHONE_NUMBER}
+                  {PHONE_NUMBER}
                 </a>
               </div>
             </div>

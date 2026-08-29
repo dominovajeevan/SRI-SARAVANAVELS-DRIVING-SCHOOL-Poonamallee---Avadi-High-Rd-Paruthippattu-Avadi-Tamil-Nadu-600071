@@ -71,7 +71,7 @@ export const BusinessInfo: React.FC = () => {
                   <div>
                     <span className="text-xs font-bold text-[#665E6E] uppercase tracking-wider block">Phone Contact</span>
                     <a href={TEL_LINK} className="text-base font-black text-[#4B2E5E] hover:text-[#C9A86A]">
-                      📞 {PHONE_NUMBER}
+                      {PHONE_NUMBER}
                     </a>
                   </div>
                 </div>
