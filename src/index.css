@@ -1,0 +1,98 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@theme {
+  --color-celestial-bg: #FAF7F2;
+  --color-celestial-bgSec: #F3EFE7;
+  --color-celestial-card: #FFFFFF;
+  --color-celestial-purple: #4B2E5E;
+  --color-celestial-violet: #72548C;
+  --color-celestial-gold: #C9A86A;
+  --color-celestial-champagne: #E7D4A8;
+  --color-celestial-charcoal: #27232A;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  background-color: #FAF7F2;
+  color: #27232A;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', 'Inter', sans-serif;
+}
+
+/* Celestial Subtle Decorative Background Pattern */
+.bg-celestial-pattern {
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(201, 168, 106, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(75, 46, 94, 0.06) 0%, transparent 40%),
+    radial-gradient(2px 2px at 40px 60px, rgba(201, 168, 106, 0.4), transparent),
+    radial-gradient(1.5px 1.5px at 150px 200px, rgba(114, 84, 140, 0.3), transparent),
+    radial-gradient(2px 2px at 300px 100px, rgba(201, 168, 106, 0.3), transparent),
+    radial-gradient(1.5px 1.5px at 500px 350px, rgba(75, 46, 94, 0.25), transparent);
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #C9A86A 0%, #B89657 50%, #8A6D35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-purple {
+  background: linear-gradient(135deg, #4B2E5E 0%, #72548C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shadow-glow-gold {
+  box-shadow: 0 10px 25px -5px rgba(201, 168, 106, 0.35);
+}
+
+.shadow-glow-purple {
+  box-shadow: 0 10px 25px -5px rgba(75, 46, 94, 0.2);
+}
+
+.shadow-card {
+  box-shadow: 0 10px 30px -10px rgba(75, 46, 94, 0.07);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #E7D4A8;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C9A86A;
+}
+
+/* Celestial pulse ring animation */
+@keyframes floatCelestial {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(2deg); }
+}
+
+.animate-celestial {
+  animation: floatCelestial 6s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
