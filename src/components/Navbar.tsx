@@ -52,13 +52,6 @@ export const Navbar: React.FC = () => {
               <span className="block text-xs font-semibold uppercase tracking-wider text-[#C9A86A]">
                 Driving School • Paruthippattu
               </span>
-              <a
-                href={TEL_LINK}
-                className="inline-flex items-center gap-1 text-xs font-bold text-[#4B2E5E] hover:text-[#C9A86A] transition-colors mt-0.5"
-              >
-                <Phone className="w-3 h-3 text-[#C9A86A] fill-[#C9A86A]" />
-                <span>{PHONE_NUMBER}</span>
-              </a>
             </div>
           </div>
 

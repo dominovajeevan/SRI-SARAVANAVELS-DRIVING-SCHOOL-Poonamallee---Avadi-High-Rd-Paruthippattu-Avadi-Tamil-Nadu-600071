@@ -3,7 +3,7 @@ import { Car, Bike, Compass, FileCheck2, Users, ArrowUpRight } from 'lucide-reac
 import type { ServiceItem } from '../types';
 
 export const Services: React.FC = () => {
-  const services: (ServiceItem & { icon: React.ElementType })[] = [
+  const services: (ServiceItem & { icon: React.ElementType; imageSrc: string; altText: string })[] = [
     {
       id: "motor-training",
       number: "01",
@@ -11,7 +11,9 @@ export const Services: React.FC = () => {
       description: "Professional motor training designed to help learners understand vehicle control, road awareness and safe driving practices.",
       iconName: "Car",
       icon: Car,
-      badge: "Four Wheeler"
+      badge: "Four Wheeler",
+      imageSrc: "/imgs/four-wheeler-training.webp",
+      altText: "Four wheeler driving training with instructor"
     },
     {
       id: "two-wheeler-training",
@@ -20,7 +22,9 @@ export const Services: React.FC = () => {
       description: "Training designed to teach individuals how to safely operate motorcycles or scooters, with guidance focused on vehicle handling and road safety.",
       iconName: "Bike",
       icon: Bike,
-      badge: "Two Wheeler"
+      badge: "Two Wheeler",
+      imageSrc: "/imgs/two-wheeler-training.webp",
+      altText: "Two wheeler motor training"
     },
     {
       id: "auto-rickshaw-training",
@@ -29,7 +33,9 @@ export const Services: React.FC = () => {
       description: "Specialized motor training for learners interested in auto-rickshaw driving and commercial three-wheeler vehicle maneuvering.",
       iconName: "Compass",
       icon: Compass,
-      badge: "Three Wheeler"
+      badge: "Three Wheeler",
+      imageSrc: "/imgs/three-wheeler-training.webp",
+      altText: "Auto rickshaw motor training"
     },
     {
       id: "license-consultation",
@@ -38,7 +44,9 @@ export const Services: React.FC = () => {
       description: "Guidance and consultation related to the driving license process and licensing requirements.",
       iconName: "FileCheck2",
       icon: FileCheck2,
-      badge: "RTO Guidance"
+      badge: "RTO Guidance",
+      imageSrc: "/imgs/rto-license-consultation.webp",
+      altText: "Driving license consultation and RTO guidance"
     },
     {
       id: "women-driver-training",
@@ -47,7 +55,9 @@ export const Services: React.FC = () => {
       description: "Training and support for women learners, with a focus on confidence, practical skills and safe driving.",
       iconName: "Users",
       icon: Users,
-      badge: "Specialized Focus"
+      badge: "Specialized Focus",
+      imageSrc: "/imgs/women-driver-training.webp",
+      altText: "Women driver training with professional instructor"
     }
   ];
 
@@ -69,47 +79,64 @@ export const Services: React.FC = () => {
         </div>
 
         {/* Services Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => {
             const IconComponent = service.icon;
             return (
               <div
                 key={service.id}
-                className="group relative bg-white hover:bg-[#FAF7F2] border border-[#E8DEC8] hover:border-[#C9A86A] rounded-2xl p-6 sm:p-8 transition-all duration-300 shadow-celestial-card flex flex-col justify-between"
+                className="group relative bg-white hover:bg-[#FAF7F2] border border-[#E8DEC8] hover:border-[#C9A86A] rounded-2xl overflow-hidden transition-all duration-300 shadow-celestial-card flex flex-col justify-between"
               >
-                <div>
-                  {/* Top Bar inside Card */}
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-3xl font-black text-[#4B2E5E]/15 group-hover:text-[#4B2E5E]/30 transition-colors">
-                      SERVICE {service.number}
-                    </span>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#4B2E5E] bg-[#F3EFE7] border border-[#C9A86A]/40 px-2.5 py-1 rounded-md">
-                      {service.badge}
-                    </span>
-                  </div>
+                {/* Top Image Banner */}
+                <div className="relative w-full h-52 overflow-hidden bg-[#4B2E5E]/10">
+                  <img
+                    src={service.imageSrc}
+                    alt={service.altText}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  {/* Subtle Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none" />
 
-                  {/* Icon */}
-                  <div className="w-14 h-14 rounded-2xl bg-[#4B2E5E] border border-[#C9A86A]/60 flex items-center justify-center text-[#C9A86A] mb-5 group-hover:scale-110 transition-transform duration-300 shadow-glow-purple">
-                    <IconComponent className="w-7 h-7" />
-                  </div>
+                  {/* Overlay: Service Number */}
+                  <span className="absolute top-3 left-4 text-xs font-black tracking-widest text-white/95 bg-[#4B2E5E]/85 backdrop-blur-md px-3 py-1 rounded-full border border-[#C9A86A]/40 shadow-sm">
+                    SERVICE {service.number}
+                  </span>
 
-                  {/* Card Title & Description */}
-                  <h3 className="text-xl font-bold text-[#4B2E5E] mb-3 group-hover:text-[#72548C] transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-[#665E6E] leading-relaxed mb-6">
-                    {service.description}
-                  </p>
+                  {/* Overlay: Badge */}
+                  <span className="absolute top-3 right-4 text-[11px] font-bold uppercase tracking-wider text-[#27232A] bg-[#C9A86A] px-2.5 py-1 rounded-md shadow-sm font-sans">
+                    {service.badge}
+                  </span>
                 </div>
 
-                {/* Card Action */}
-                <a
-                  href="#courses"
-                  className="w-full mt-2 inline-flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[#4B2E5E] group-hover:text-[#C9A86A] pt-4 border-t border-[#E8DEC8] transition-colors"
-                >
-                  <span>View Training Modules</span>
-                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </a>
+                {/* Card Content */}
+                <div className="p-6 sm:p-7 flex flex-col flex-1 justify-between">
+                  <div>
+                    {/* Title with Icon */}
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-xl bg-[#4B2E5E] border border-[#C9A86A]/60 flex items-center justify-center text-[#C9A86A] shrink-0 group-hover:scale-105 transition-transform duration-300 shadow-sm">
+                        <IconComponent className="w-5 h-5" />
+                      </div>
+                      <h3 className="text-lg font-bold text-[#4B2E5E] group-hover:text-[#72548C] transition-colors leading-snug">
+                        {service.title}
+                      </h3>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-sm text-[#665E6E] leading-relaxed mb-6">
+                      {service.description}
+                    </p>
+                  </div>
+
+                  {/* Card Action */}
+                  <a
+                    href="#courses"
+                    className="w-full inline-flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[#4B2E5E] group-hover:text-[#C9A86A] pt-4 border-t border-[#E8DEC8] transition-colors mt-auto"
+                  >
+                    <span>View Training Modules</span>
+                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </a>
+                </div>
               </div>
             );
           })}

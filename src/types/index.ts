@@ -5,6 +5,8 @@ export interface ServiceItem {
   description: string;
   iconName: string;
   badge?: string;
+  imageSrc?: string;
+  altText?: string;
 }
 
 export interface CourseItem {

@@ -17,7 +17,7 @@ export const About: React.FC = () => {
 
               <div className="relative overflow-hidden rounded-2xl border-2 border-[#C9A86A]/60 shadow-xl bg-white">
                 <img
-                  src="/images/about.png"
+                  src="/images/img1.avif"
                   alt="SRI SARAVANAVELS DRIVING SCHOOL Vehicle"
                   className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                 />
