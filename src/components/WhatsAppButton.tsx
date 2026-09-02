@@ -5,7 +5,7 @@ export const WhatsAppButton: React.FC = () => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   return (
-    <div className="fixed z-50 bottom-[20px] right-[20px] lg:bottom-[24px] lg:right-[24px] max-lg:bottom-[80px] flex items-center gap-2">
+    <div className="fixed z-50 bottom-[75px] sm:bottom-[80px] right-4 lg:bottom-[24px] lg:right-[24px] flex items-center gap-2">
       
       {/* Tooltip */}
       {showTooltip && (
@@ -21,7 +21,7 @@ export const WhatsAppButton: React.FC = () => {
         rel="noopener noreferrer"
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
-        aria-label="Chat on WhatsApp with Sri Saravana Vels Driving School"
+        aria-label="Chat on WhatsApp with SRI SARAVANAVELS DRIVING SCHOOL"
         className="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 border-2 border-white ring-4 ring-[#C9A86A]/30 group"
       >
         <svg

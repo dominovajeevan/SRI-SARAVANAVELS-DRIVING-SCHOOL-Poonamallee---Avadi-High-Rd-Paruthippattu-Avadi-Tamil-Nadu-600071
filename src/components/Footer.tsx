@@ -23,15 +23,11 @@ export const Footer: React.FC = () => {
           {/* Brand Col */}
           <div className="lg:col-span-4 space-y-4">
             <a href="#hero" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-[#FAF7F2] flex items-center justify-center shadow-glow-gold">
-                <svg className="w-6 h-6 text-[#4B2E5E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <circle cx="12" cy="12" r="2"/>
-                  <path d="M12 2v8"/>
-                  <path d="m4.93 10.93 6.36 3.67"/>
-                  <path d="m19.07 10.93-6.36 3.67"/>
-                </svg>
-              </div>
+              <img
+                src="/imgs/logo.png"
+                alt="SRI SARAVANAVELS DRIVING SCHOOL"
+                className="h-10 sm:h-11 w-auto object-contain bg-white p-1 rounded-lg shadow-glow-gold"
+              />
               <div>
                 <span className="block text-base font-extrabold text-white uppercase">{BUSINESS_NAME_EN}</span>
                 <span className="block text-xs text-[#E7D4A8] font-bold">{BUSINESS_NAME_TA}</span>
@@ -39,12 +35,12 @@ export const Footer: React.FC = () => {
             </a>
 
             <p className="text-xs sm:text-sm text-[#FAF7F2]/80 leading-relaxed">
-              Professional Motor Training in Paruthippattu, Avadi, Chennai. Dedicated to safe, confident, and patient driving instruction since 2011.
+              Professional Motor Training in Paruthippattu, Avadi, Chennai. Dedicated to safe, confident, and patient driving instruction since 2013.
             </p>
 
             <div className="pt-2 flex items-center gap-2 text-xs text-[#E7D4A8] font-semibold">
               <ShieldCheck className="w-4 h-4 text-[#C9A86A]" />
-              <span>Established 2011 • Near RTO Office</span>
+              <span>ESTABLISHED 2013</span>
             </div>
           </div>
 
@@ -76,7 +72,7 @@ export const Footer: React.FC = () => {
                 <div>
                   <span className="block font-bold text-white mb-0.5">{BUSINESS_NAME_EN}</span>
                   <span className="block text-[#E7D4A8] font-medium mb-1">{BUSINESS_NAME_TA}</span>
-                  <span>Poonamallee - Avadi High Rd, Paruthippattu, Avadi, Tamil Nadu 600071</span>
+                  <span>No 3, PH Road, Iyyankulam, Paruthipattu, Avadi, Chennai 71</span>
                 </div>
               </div>
 

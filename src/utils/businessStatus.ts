@@ -6,9 +6,9 @@ export interface BusinessStatus {
 
 export const BUSINESS_NAME_EN = "SRI SARAVANAVELS DRIVING SCHOOL";
 export const BUSINESS_NAME_TA = "ஶ்ரீ சரவணவேல்ஸ் டிரைவிங் ஸ்கூல்";
-export const PHONE_NUMBER = "09840605529";
-export const TEL_LINK = "tel:09840605529";
-export const WHATSAPP_LINK = "https://wa.me/919840605529";
+export const PHONE_NUMBER = "7299367999";
+export const TEL_LINK = "tel:7299367999";
+export const WHATSAPP_LINK = "https://wa.me/917299367999";
 
 export function getBusinessStatus(): BusinessStatus {
   const now = new Date();
@@ -49,5 +49,5 @@ export function getBusinessStatus(): BusinessStatus {
   }
 }
 
-export const MAPS_DIRECTIONS_URL = "https://www.google.com/maps/place/SRI+SARAVANAVELS+DRIVING+SCHOOL/@13.093313,80.0891666,15z/data=!4m22!1m15!4m14!1m6!1m2!1s0x3a52620de13ff343:0xa45fec4919a15cc4!2sSRI+SARAVANAVELS+DRIVING+SCHOOL,+Poonamallee+-+Avadi+High+Rd,+Paruthippattu,+Avadi,+Tamil+Nadu+600071!2m2!1d80.1082747!2d13.0933092!1m6!1m2!1s0x3a52620de13ff343:0xa45fec4919a15cc4!2sSRI+SARAVANAVELS+DRIVING+SCHOOL,+Poonamallee+-+Avadi+High+Rd,+Paruthippattu,+Avadi,+Tamil+Nadu+600071!2m2!1d80.1082747!2d13.0933092!3m5!1s0x3a52620de13ff343:0xa45fec4919a15cc4!8m2!3d13.093313!4d80.108221!16s%2Fg%2F11b77pb7pd";
+export const MAPS_DIRECTIONS_URL = "https://www.google.com/maps/search/?api=1&query=SRI+SARAVANAVELS+DRIVING+SCHOOL+No+3+PH+Road+Iyyankulam+Paruthipattu+Avadi+Chennai+71";
 export const MAPS_EMBED_URL = "https://maps.google.com/maps?q=13.093313,80.108221&t=&z=16&ie=UTF8&iwloc=&output=embed";

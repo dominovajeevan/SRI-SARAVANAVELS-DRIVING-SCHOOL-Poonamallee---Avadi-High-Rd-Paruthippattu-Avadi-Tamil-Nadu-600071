@@ -1,6 +1,6 @@
 import React from 'react';
 import { X, Phone, MapPin, CalendarCheck } from 'lucide-react';
-import { MAPS_DIRECTIONS_URL } from '../utils/businessStatus';
+import { MAPS_DIRECTIONS_URL, PHONE_NUMBER, TEL_LINK } from '../utils/businessStatus';
 
 interface PhonePlaceholderModalProps {
   isOpen: boolean;
@@ -39,12 +39,11 @@ export const PhonePlaceholderModal: React.FC<PhonePlaceholderModalProps> = ({
 
         <div className="bg-[#080A10] p-4 rounded-xl border border-brand-border my-4">
           <span className="text-xs font-semibold uppercase text-gray-400 block mb-1">Official Hotline</span>
-          <span className="text-xl font-black text-amber-400 tracking-widest font-mono">[PHONE NUMBER]</span>
-          <span className="text-[11px] text-gray-500 block mt-1">Please insert the official business number</span>
+          <a href={TEL_LINK} className="text-2xl font-black text-amber-400 tracking-widest font-mono hover:underline block">{PHONE_NUMBER}</a>
         </div>
 
         <p className="text-xs text-gray-300 leading-relaxed mb-6">
-          Sri Saravana Vels Driving School in Paruthippattu, Avadi is open Monday to Saturday from 9:00 AM to 8:00 PM. You can also submit an online enquiry or get directions directly.
+          SRI SARAVANAVELS DRIVING SCHOOL in Paruthippattu, Avadi is open Monday to Saturday from 9:00 AM to 8:00 PM. You can also submit an online enquiry or get directions directly.
         </p>
 
         <div className="space-y-3">

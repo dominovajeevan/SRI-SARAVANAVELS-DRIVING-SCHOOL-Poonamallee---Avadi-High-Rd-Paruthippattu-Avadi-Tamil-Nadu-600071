@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin, Calendar, Star, Car, Users, Clock, CreditCard, Building2, Phone } from 'lucide-react';
 import { getBusinessStatus, type BusinessStatus, PHONE_NUMBER, TEL_LINK, BUSINESS_NAME_EN, BUSINESS_NAME_TA } from '../utils/businessStatus';
+import { ScrollReveal } from './ScrollReveal';
 
 export const BusinessInfo: React.FC = () => {
   const [status, setStatus] = useState<BusinessStatus>(getBusinessStatus());
@@ -25,22 +26,25 @@ export const BusinessInfo: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#4B2E5E] bg-[#F3EFE7] px-3 py-1 rounded-full border border-[#C9A86A]/40 shadow-sm">
-            VERIFIED ACADEMY DATA
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#4B2E5E] tracking-tight">
-            Business Information & <span className="gradient-text-gold">Hours</span>
-          </h2>
-          <p className="text-[#665E6E] text-base sm:text-lg">
-            Essential operational details for SRI SARAVANAVELS DRIVING SCHOOL.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#4B2E5E] bg-[#F3EFE7] px-3 py-1 rounded-full border border-[#C9A86A]/40 shadow-sm">
+              VERIFIED ACADEMY DATA
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#4B2E5E] tracking-tight">
+              Business Information & <span className="gradient-text-gold">Hours</span>
+            </h2>
+            <p className="text-[#665E6E] text-base sm:text-lg">
+              Essential operational details for SRI SARAVANAVELS DRIVING SCHOOL.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
           {/* Business Details Card */}
-          <div className="lg:col-span-6 bg-white border border-[#E8DEC8] hover:border-[#C9A86A] rounded-2xl p-6 sm:p-8 shadow-celestial-card flex flex-col justify-between">
+          <ScrollReveal delay={100} className="lg:col-span-6 flex">
+            <div className="bg-white border border-[#E8DEC8] hover:border-[#C9A86A] rounded-2xl p-6 sm:p-8 shadow-celestial-card flex flex-col justify-between w-full">
             <div>
               <div className="flex items-center gap-3 mb-6 pb-6 border-b border-[#E8DEC8]">
                 <div className="w-12 h-12 rounded-xl bg-[#4B2E5E] border border-[#C9A86A]/50 flex items-center justify-center text-[#C9A86A] shadow-sm">
@@ -60,9 +64,8 @@ export const BusinessInfo: React.FC = () => {
                   <div>
                     <span className="text-xs font-bold text-[#665E6E] uppercase tracking-wider block">Address</span>
                     <span className="text-sm text-[#27232A] leading-snug block font-medium">
-                      Poonamallee - Avadi High Rd, Paruthippattu, Avadi, Tamil Nadu 600071
+                      No 3, PH Road, Iyyankulam, Paruthipattu, Avadi, Chennai 71
                     </span>
-                    <span className="text-xs text-[#4B2E5E] font-semibold block mt-0.5">Landmark: Near RTO Office</span>
                   </div>
                 </div>
 
@@ -81,7 +84,7 @@ export const BusinessInfo: React.FC = () => {
                     <Calendar className="w-4 h-4 text-[#C9A86A]" />
                     <div>
                       <span className="text-[10px] text-[#665E6E] block font-semibold">Established</span>
-                      <span className="text-sm font-bold text-[#4B2E5E]">2011</span>
+                      <span className="text-sm font-bold text-[#4B2E5E]">2013</span>
                     </div>
                   </div>
 
@@ -114,16 +117,18 @@ export const BusinessInfo: React.FC = () => {
                   <CreditCard className="w-5 h-5 text-[#C9A86A] shrink-0 mt-0.5" />
                   <div>
                     <span className="text-xs font-bold text-[#4B2E5E] uppercase tracking-wider block">Accepted Payment Modes</span>
-                    <span className="text-xs text-[#27232A] font-semibold block mt-0.5">Cash, Cheque, Demand Draft</span>
+                    <span className="text-xs text-[#27232A] font-semibold block mt-0.5">Payment can be made via Cash or UPI only.</span>
                   </div>
                 </div>
 
               </div>
             </div>
           </div>
+        </ScrollReveal>
 
           {/* Opening Hours Schedule Card */}
-          <div className="lg:col-span-6 bg-white border border-[#E8DEC8] hover:border-[#C9A86A] rounded-2xl p-6 sm:p-8 shadow-celestial-card flex flex-col justify-between">
+          <ScrollReveal delay={200} className="lg:col-span-6 flex">
+            <div className="bg-white border border-[#E8DEC8] hover:border-[#C9A86A] rounded-2xl p-6 sm:p-8 shadow-celestial-card flex flex-col justify-between w-full">
             <div>
               
               {/* Header with Live Ticker */}
@@ -181,6 +186,7 @@ export const BusinessInfo: React.FC = () => {
 
             </div>
           </div>
+        </ScrollReveal>
 
         </div>
 

@@ -18,12 +18,12 @@ import { WhatsAppButton } from './components/WhatsAppButton';
 
 export function App() {
   return (
-    <div className="min-h-screen bg-[#FAF7F2] text-[#27232A] flex flex-col font-sans selection:bg-[#C9A86A] selection:text-[#27232A]">
+    <div className="min-h-screen bg-[#FAF7F2] text-[#27232A] flex flex-col font-sans selection:bg-[#C9A86A] selection:text-[#27232A] overflow-x-hidden">
       {/* Sticky Navigation */}
       <Navbar />
 
       {/* Main Content Sections */}
-      <main className="flex-grow">
+      <main className="flex-grow overflow-x-hidden">
         <Hero />
         <HeroStats />
         <About />

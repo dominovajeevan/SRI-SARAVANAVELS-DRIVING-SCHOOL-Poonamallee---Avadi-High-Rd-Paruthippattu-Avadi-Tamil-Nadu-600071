@@ -1,6 +1,7 @@
 import React from 'react';
 import { Car, Bike, Compass, FileCheck2, Users, ArrowUpRight } from 'lucide-react';
 import type { ServiceItem } from '../types';
+import { ScrollReveal } from './ScrollReveal';
 
 export const Services: React.FC = () => {
   const services: (ServiceItem & { icon: React.ElementType; imageSrc: string; altText: string })[] = [
@@ -66,35 +67,37 @@ export const Services: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#4B2E5E] bg-[#FAF7F2] px-3.5 py-1 rounded-full border border-[#C9A86A]/40 shadow-sm">
-            PRACTICAL MOTOR INSTRUCTION
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#4B2E5E] tracking-tight">
-            Training & <span className="gradient-text-gold">Services</span>
-          </h2>
-          <p className="text-[#665E6E] text-base sm:text-lg">
-            Practical training designed around your learning needs.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#4B2E5E] bg-[#FAF7F2] px-3.5 py-1 rounded-full border border-[#C9A86A]/40 shadow-sm">
+              PRACTICAL MOTOR INSTRUCTION
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#4B2E5E] tracking-tight">
+              Training & <span className="gradient-text-gold">Services</span>
+            </h2>
+            <p className="text-[#665E6E] text-base sm:text-lg">
+              Practical training designed around your learning needs.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Services Cards Flex Layout (Centered bottom row) */}
         <div className="flex flex-wrap justify-center gap-8">
-          {services.map((service) => {
+          {services.map((service, idx) => {
             const IconComponent = service.icon;
             return (
-              <div
-                key={service.id}
-                className="group relative bg-white hover:bg-[#FAF7F2] border border-[#E8DEC8] hover:border-[#C9A86A] rounded-2xl overflow-hidden transition-all duration-300 shadow-celestial-card flex flex-col justify-between w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md lg:max-w-none"
-              >
-                {/* Top Image Banner */}
-                <div className="relative w-full h-52 overflow-hidden bg-[#4B2E5E]/10">
-                  <img
-                    src={service.imageSrc}
-                    alt={service.altText}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
+              <ScrollReveal key={service.id} delay={idx * 100} className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md lg:max-w-none flex">
+                <div
+                  className="group relative bg-white hover:bg-[#FAF7F2] border border-[#E8DEC8] hover:border-[#C9A86A] rounded-2xl overflow-hidden transition-all duration-300 shadow-celestial-card flex flex-col justify-between w-full"
+                >
+                  {/* Top Image Banner */}
+                  <div className="relative w-full h-52 overflow-hidden bg-[#4B2E5E]/10">
+                    <img
+                      src={service.imageSrc}
+                      alt={service.altText}
+                      className="w-full h-full object-cover img-hover-zoom transition-transform duration-500"
+                      loading="lazy"
+                    />
                   {/* Subtle Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none" />
 
@@ -138,6 +141,7 @@ export const Services: React.FC = () => {
                   </a>
                 </div>
               </div>
+            </ScrollReveal>
             );
           })}
         </div>

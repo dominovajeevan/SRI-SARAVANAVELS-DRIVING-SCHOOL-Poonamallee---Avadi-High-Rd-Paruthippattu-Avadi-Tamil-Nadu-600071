@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 import type { FAQItem } from '../types';
+import { ScrollReveal } from './ScrollReveal';
 
 export const FAQ: React.FC = () => {
   const [openId, setOpenId] = useState<string | null>("faq-1");
@@ -9,12 +10,12 @@ export const FAQ: React.FC = () => {
     {
       id: "faq-1",
       question: "What are the various modes of payment accepted?",
-      answer: "Payment can be made via Cash, Cheque or Demand Draft, based on the supplied business information."
+      answer: "Payment can be made via Cash or UPI only."
     },
     {
       id: "faq-2",
       question: "Where is SRI SARAVANAVELS DRIVING SCHOOL located?",
-      answer: "Poonamallee - Avadi High Rd, Paruthippattu, Avadi, Tamil Nadu 600071. The school is near the RTO Office."
+      answer: "No 3, PH Road, Iyyankulam, Paruthipattu, Avadi, Chennai 71."
     },
     {
       id: "faq-3",
@@ -52,31 +53,33 @@ export const FAQ: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center mb-16 space-y-3">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#4B2E5E] bg-[#F3EFE7] px-3.5 py-1 rounded-full border border-[#C9A86A]/40 shadow-sm">
-            COMMON QUESTIONS
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#4B2E5E] tracking-tight">
-            Frequently Asked <span className="gradient-text-gold">Questions</span>
-          </h2>
-          <p className="text-[#665E6E] text-base">
-            Everything you need to know about SRI SARAVANAVELS DRIVING SCHOOL.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16 space-y-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#4B2E5E] bg-[#F3EFE7] px-3.5 py-1 rounded-full border border-[#C9A86A]/40 shadow-sm">
+              COMMON QUESTIONS
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#4B2E5E] tracking-tight">
+              Frequently Asked <span className="gradient-text-gold">Questions</span>
+            </h2>
+            <p className="text-[#665E6E] text-base">
+              Everything you need to know about SRI SARAVANAVELS DRIVING SCHOOL.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Accordion List */}
         <div className="space-y-4">
-          {faqs.map((faq) => {
+          {faqs.map((faq, idx) => {
             const isOpen = openId === faq.id;
             return (
-              <div
-                key={faq.id}
-                className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
-                  isOpen
-                    ? 'bg-white border-[#C9A86A] shadow-glow-gold'
-                    : 'bg-white hover:bg-[#FAF7F2] border-[#E8DEC8]'
-                }`}
-              >
+              <ScrollReveal key={faq.id} delay={idx * 50}>
+                <div
+                  className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
+                    isOpen
+                      ? 'bg-white border-[#C9A86A] shadow-glow-gold'
+                      : 'bg-white hover:bg-[#FAF7F2] border-[#E8DEC8]'
+                  }`}
+                >
                 <button
                   onClick={() => toggleFAQ(faq.id)}
                   className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4"
@@ -98,8 +101,9 @@ export const FAQ: React.FC = () => {
                   </div>
                 )}
               </div>
-            );
-          })}
+            </ScrollReveal>
+          );
+        })}
         </div>
 
       </div>

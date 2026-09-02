@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Navigation, ExternalLink } from 'lucide-react';
 import { MAPS_DIRECTIONS_URL, MAPS_EMBED_URL, BUSINESS_NAME_EN, BUSINESS_NAME_TA } from '../utils/businessStatus';
+import { ScrollReveal } from './ScrollReveal';
 
 export const LocationMap: React.FC = () => {
   return (
@@ -8,36 +9,39 @@ export const LocationMap: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#4B2E5E] bg-[#FAF7F2] px-3.5 py-1 rounded-full border border-[#C9A86A]/40 shadow-sm">
-            CONVENIENT PARUTHIPPATTU LOCATION
-          </span>
-          
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#4B2E5E] tracking-tight">
-            Find Us in <span className="gradient-text-gold">Paruthippattu</span>
-          </h2>
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#4B2E5E] bg-[#FAF7F2] px-3.5 py-1 rounded-full border border-[#C9A86A]/40 shadow-sm">
+              CONVENIENT PARUTHIPPATTU LOCATION
+            </span>
+            
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#4B2E5E] tracking-tight">
+              Find Us in <span className="gradient-text-gold">Paruthippattu</span>
+            </h2>
 
-          <div className="pt-1">
-            <h3 className="text-2xl sm:text-3xl font-black text-[#4B2E5E] tracking-tight">
-              {BUSINESS_NAME_EN}
-            </h3>
-            <span className="block text-xl sm:text-2xl font-bold text-[#72548C] font-sans mt-1">
-              {BUSINESS_NAME_TA}
+            <div className="pt-1">
+              <h3 className="text-2xl sm:text-3xl font-black text-[#4B2E5E] tracking-tight">
+                {BUSINESS_NAME_EN}
+              </h3>
+              <span className="block text-xl sm:text-2xl font-bold text-[#72548C] font-sans mt-1">
+                {BUSINESS_NAME_TA}
+              </span>
+            </div>
+
+            <p className="text-[#27232A]/85 text-base sm:text-lg max-w-2xl mx-auto font-medium">
+              No 3, PH Road, Iyyankulam, Paruthipattu, Avadi, Chennai 71
+            </p>
+            
+            <span className="inline-flex items-center gap-1.5 text-xs text-[#4B2E5E] font-bold bg-[#FAF7F2] border border-[#C9A86A]/50 px-3.5 py-1.5 rounded-md shadow-sm">
+              <MapPin className="w-3.5 h-3.5 text-[#C9A86A]" />
+              No 3, PH Road, Iyyankulam, Paruthipattu
             </span>
           </div>
-
-          <p className="text-[#27232A]/85 text-base sm:text-lg max-w-2xl mx-auto font-medium">
-            Poonamallee - Avadi High Rd, Paruthippattu, Avadi, Tamil Nadu 600071
-          </p>
-          
-          <span className="inline-flex items-center gap-1.5 text-xs text-[#4B2E5E] font-bold bg-[#FAF7F2] border border-[#C9A86A]/50 px-3.5 py-1.5 rounded-md shadow-sm">
-            <MapPin className="w-3.5 h-3.5 text-[#C9A86A]" />
-            Landmark: Near RTO Office, Avadi
-          </span>
-        </div>
+        </ScrollReveal>
 
         {/* Map Container */}
-        <div className="relative rounded-3xl overflow-hidden border-2 border-[#C9A86A]/60 shadow-celestial-card bg-white">
+        <ScrollReveal delay={100}>
+          <div className="relative rounded-3xl overflow-hidden border-2 border-[#C9A86A]/60 shadow-celestial-card bg-white">
           
           {/* Top Banner overlay */}
           <div className="absolute top-4 left-4 right-4 z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-[#FAF7F2]/95 backdrop-blur-md p-4 rounded-2xl border border-[#C9A86A]/50 shadow-lg">
@@ -94,7 +98,7 @@ export const LocationMap: React.FC = () => {
           <div className="bg-[#FAF7F2] p-4 border-t border-[#E8DEC8] flex flex-wrap items-center justify-between gap-4 text-xs text-[#665E6E]">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Poonamallee - Avadi High Rd • Parking Available</span>
+              <span>No 3, PH Road, Iyyankulam, Paruthipattu, Avadi, Chennai 71 • Parking Available</span>
             </div>
             <a
               href={MAPS_DIRECTIONS_URL}
@@ -106,7 +110,8 @@ export const LocationMap: React.FC = () => {
             </a>
           </div>
 
-        </div>
+          </div>
+        </ScrollReveal>
 
       </div>
     </section>

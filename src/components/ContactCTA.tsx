@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, ExternalLink } from 'lucide-react';
 import { MAPS_DIRECTIONS_URL, PHONE_NUMBER, TEL_LINK, BUSINESS_NAME_EN, BUSINESS_NAME_TA } from '../utils/businessStatus';
+import { ScrollReveal } from './ScrollReveal';
 
 export const ContactCTA: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ export const ContactCTA: React.FC = () => {
       {/* Decorative Celestial Glow Effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#C9A86A]/15 blur-[120px] pointer-events-none rounded-full" />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <ScrollReveal className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
         <div className="bg-white border-2 border-[#C9A86A]/60 rounded-3xl p-8 sm:p-14 shadow-celestial-card backdrop-blur-md">
           
@@ -22,7 +23,7 @@ export const ContactCTA: React.FC = () => {
           </h2>
 
           <p className="text-base sm:text-lg text-[#27232A]/80 max-w-2xl mx-auto mb-8 font-medium">
-            Have questions about our driving training or services? Contact Sri Saravana Vels Driving School directly.
+            Have questions about our driving training or services? Contact SRI SARAVANAVELS DRIVING SCHOOL directly.
           </p>
 
           <div className="bg-[#FAF7F2] p-6 rounded-2xl border border-[#E8DEC8] mb-8 text-left max-w-xl mx-auto space-y-4">
@@ -50,9 +51,8 @@ export const ContactCTA: React.FC = () => {
                 <span className="text-xs font-bold text-[#665E6E] uppercase tracking-wider block">Official Location</span>
                 <span className="text-sm font-bold text-[#4B2E5E] block">{BUSINESS_NAME_EN} ({BUSINESS_NAME_TA})</span>
                 <span className="text-xs text-[#27232A]/80 block mt-0.5">
-                  Poonamallee - Avadi High Rd, Paruthippattu, Avadi, Tamil Nadu 600071
+                  No 3, PH Road, Iyyankulam, Paruthipattu, Avadi, Chennai 71
                 </span>
-                <span className="text-xs text-[#C9A86A] font-semibold block mt-0.5">Landmark: Near RTO Office</span>
               </div>
             </div>
 
@@ -84,12 +84,12 @@ export const ContactCTA: React.FC = () => {
           </div>
 
           <p className="text-xs text-[#665E6E] mt-6">
-            Poonamallee - Avadi High Rd, Paruthippattu, Avadi • Open Mon–Sat 9:00 AM – 8:00 PM
+            No 3, PH Road, Iyyankulam, Paruthipattu, Avadi, Chennai 71 • Open Mon–Sat 9:00 AM – 8:00 PM
           </p>
 
         </div>
 
-      </div>
+      </ScrollReveal>
     </section>
   );
 };

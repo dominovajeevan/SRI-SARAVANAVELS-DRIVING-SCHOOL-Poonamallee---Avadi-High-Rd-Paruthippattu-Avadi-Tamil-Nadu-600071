@@ -1,5 +1,6 @@
 import React from 'react';
 import { BookOpen, Key, TrendingUp, CheckCheck } from 'lucide-react';
+import { ScrollReveal } from './ScrollReveal';
 
 export const LearningProcess: React.FC = () => {
   const steps = [
@@ -34,17 +35,19 @@ export const LearningProcess: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#4B2E5E] bg-[#FAF7F2] px-3 py-1 rounded-full border border-[#C9A86A]/40 shadow-sm">
-            STEP-BY-STEP METHODOLOGY
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#4B2E5E] tracking-tight">
-            Safety & <span className="gradient-text-gold">Learning Process</span>
-          </h2>
-          <p className="text-[#665E6E] text-base sm:text-lg">
-            Structured road training designed to build lifelong driving confidence.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#4B2E5E] bg-[#FAF7F2] px-3 py-1 rounded-full border border-[#C9A86A]/40 shadow-sm">
+              STEP-BY-STEP METHODOLOGY
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#4B2E5E] tracking-tight">
+              Safety & <span className="gradient-text-gold">Learning Process</span>
+            </h2>
+            <p className="text-[#665E6E] text-base sm:text-lg">
+              Structured road training designed to build lifelong driving confidence.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* 4-Step Timeline Container */}
         <div className="relative">
@@ -56,28 +59,29 @@ export const LearningProcess: React.FC = () => {
             {steps.map((step, idx) => {
               const IconComponent = step.icon;
               return (
-                <div
-                  key={idx}
-                  className="bg-white border border-[#E8DEC8] hover:border-[#C9A86A] rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 shadow-celestial-card group text-center flex flex-col items-center"
-                >
-                  {/* Step Badge Icon */}
-                  <div className="relative mb-6">
-                    <div className="w-16 h-16 rounded-2xl bg-[#4B2E5E] text-[#C9A86A] font-extrabold flex items-center justify-center shadow-glow-purple group-hover:scale-110 transition-transform">
-                      <IconComponent className="w-8 h-8 stroke-[2.2]" />
+                <ScrollReveal key={idx} delay={idx * 100}>
+                  <div
+                    className="bg-white border border-[#E8DEC8] hover:border-[#C9A86A] rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 shadow-celestial-card group text-center flex flex-col items-center h-full"
+                  >
+                    {/* Step Badge Icon */}
+                    <div className="relative mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-[#4B2E5E] text-[#C9A86A] font-extrabold flex items-center justify-center shadow-glow-purple group-hover:scale-110 transition-transform">
+                        <IconComponent className="w-8 h-8 stroke-[2.2]" />
+                      </div>
+                      <span className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-[#C9A86A] text-[#27232A] text-[10px] font-black uppercase px-2 py-0.5 rounded-full shadow-sm">
+                        STEP {step.number}
+                      </span>
                     </div>
-                    <span className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-[#C9A86A] text-[#27232A] text-[10px] font-black uppercase px-2 py-0.5 rounded-full shadow-sm">
-                      STEP {step.number}
-                    </span>
-                  </div>
 
-                  {/* Step Title & Description */}
-                  <h3 className="text-xl font-bold text-[#4B2E5E] mb-2 group-hover:text-[#72548C] transition-colors">
-                    {step.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#665E6E] leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
+                    {/* Step Title & Description */}
+                    <h3 className="text-xl font-bold text-[#4B2E5E] mb-2 group-hover:text-[#72548C] transition-colors">
+                      {step.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#665E6E] leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </ScrollReveal>
               );
             })}
           </div>

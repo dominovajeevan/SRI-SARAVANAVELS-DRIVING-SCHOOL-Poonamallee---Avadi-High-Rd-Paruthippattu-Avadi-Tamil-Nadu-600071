@@ -2,6 +2,7 @@ import React from 'react';
 import { CheckCircle2, MapPin, Sparkles } from 'lucide-react';
 import type { CourseItem } from '../types';
 import { MAPS_DIRECTIONS_URL } from '../utils/businessStatus';
+import { ScrollReveal } from './ScrollReveal';
 
 export const Courses: React.FC = () => {
   const courses: CourseItem[] = [
@@ -57,31 +58,33 @@ export const Courses: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#4B2E5E] bg-[#F3EFE7] px-3.5 py-1 rounded-full border border-[#C9A86A]/40 shadow-sm">
-            TAILORED INSTRUCTION TIERS
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#4B2E5E] tracking-tight">
-            Driving Classes & <span className="gradient-text-gold">Training</span>
-          </h2>
-          <p className="text-[#665E6E] text-base sm:text-lg">
-            Choose the training that fits your learning needs.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#4B2E5E] bg-[#F3EFE7] px-3.5 py-1 rounded-full border border-[#C9A86A]/40 shadow-sm">
+              TAILORED INSTRUCTION TIERS
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#4B2E5E] tracking-tight">
+              Driving Classes & <span className="gradient-text-gold">Training</span>
+            </h2>
+            <p className="text-[#665E6E] text-base sm:text-lg">
+              Choose the training that fits your learning needs.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Course Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {courses.map((course, index) => {
             const isFeatured = index === 1; // Highlight middle card
             return (
-              <div
-                key={course.id}
-                className={`relative rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 ${
-                  isFeatured
-                    ? 'bg-[#4B2E5E] text-[#FAF7F2] border-2 border-[#C9A86A] shadow-glow-purple scale-102'
-                    : 'bg-white text-[#27232A] border border-[#E8DEC8] hover:border-[#C9A86A]/60 shadow-celestial-card'
-                }`}
-              >
+              <ScrollReveal key={course.id} delay={index * 100} className="flex">
+                <div
+                  className={`relative rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 w-full ${
+                    isFeatured
+                      ? 'bg-[#4B2E5E] text-[#FAF7F2] border-2 border-[#C9A86A] shadow-glow-purple scale-102'
+                      : 'bg-white text-[#27232A] border border-[#E8DEC8] hover:border-[#C9A86A]/60 shadow-celestial-card'
+                  }`}
+                >
                 {isFeatured && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#C9A86A] text-[#27232A] text-[11px] font-black uppercase tracking-wider px-3.5 py-1 rounded-full shadow-md flex items-center gap-1">
                     <Sparkles className="w-3.5 h-3.5 fill-[#27232A]" />
@@ -164,8 +167,9 @@ export const Courses: React.FC = () => {
                 </a>
 
               </div>
-            );
-          })}
+            </ScrollReveal>
+          );
+        })}
         </div>
 
       </div>

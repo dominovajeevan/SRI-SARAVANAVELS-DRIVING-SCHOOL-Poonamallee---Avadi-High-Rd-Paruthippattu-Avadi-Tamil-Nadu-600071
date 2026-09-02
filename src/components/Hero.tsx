@@ -10,7 +10,8 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0">
         <img
           src="/images/hero.png"
-          alt="Sri Saravana Vels Driving School Full-Width Banner"
+          alt="SRI SARAVANAVELS DRIVING SCHOOL Full-Width Banner"
+          loading="eager"
           className="w-full h-full object-cover object-center scale-105 filter brightness-90 contrast-110"
         />
         {/* Sophisticated Deep Purple Overlay Gradient for Text Readability */}
@@ -29,7 +30,7 @@ export const Hero: React.FC = () => {
           {/* Small Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF7F2]/10 backdrop-blur-md border border-[#C9A86A]/60 text-[#E7D4A8] text-xs font-bold uppercase tracking-wider mb-6 shadow-glow-gold">
             <Sparkles className="w-4 h-4 text-[#C9A86A]" />
-            <span>ESTABLISHED 2011 • PARUTHIPPATTU, AVADI</span>
+            <span>ESTABLISHED 2013 • PARUTHIPPATTU, AVADI</span>
           </div>
 
           {/* Main Heading */}
@@ -42,10 +43,10 @@ export const Hero: React.FC = () => {
 
           {/* Supporting text */}
           <p className="text-base sm:text-lg lg:text-xl text-[#FAF7F2]/90 leading-relaxed mb-8 font-medium max-w-2xl drop-shadow-sm">
-            Professional motor training with personalized attention, practical guidance and a strong focus on safe and confident driving. Located near RTO Office, Paruthippattu, Avadi.
+            Professional motor training with personalized attention, practical guidance and a strong focus on safe and confident driving. Located at No 3, PH Road, Iyyankulam, Paruthipattu, Avadi, Chennai 71.
           </p>
 
-          {/* Primary Actions: Explore Us, Get Directions, and Phone Button (09840605529 with 1 Phone Icon) */}
+          {/* Primary Actions: Explore Us, Get Directions, and Phone Button (7299367999 with 1 Phone Icon) */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-10">
             
             {/* 1. Explore Us */}
@@ -68,7 +69,7 @@ export const Hero: React.FC = () => {
               <span>Get Directions</span>
             </a>
 
-            {/* 3. Phone Call Button (09840605529 - ONLY 1 SINGLE PHONE ICON) */}
+            {/* 3. Phone Call Button (7299367999 - ONLY 1 SINGLE PHONE ICON) */}
             <a
               href={TEL_LINK}
               className="inline-flex items-center justify-center gap-2.5 bg-[#4B2E5E]/90 hover:bg-[#4B2E5E] text-[#FAF7F2] font-bold text-base px-6 py-4 rounded-xl border border-[#C9A86A]/60 shadow-glow-purple transition-all duration-200"
