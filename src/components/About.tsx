@@ -6,27 +6,39 @@ import { ScrollReveal } from './ScrollReveal';
 export const GALLERY_IMAGES: LightboxImage[] = [
   {
     src: '/imgs/img1.avif',
-    alt: 'SRI SARAVANAVELS DRIVING SCHOOL Training Vehicle',
-    title: 'Primary Training Vehicle',
+    alt: 'SRI SARAVANAVELS DRIVING SCHOOL Training Vehicle (IMG 1)',
+    title: 'Primary Training Vehicle (IMG 1)',
     caption: 'SRI SARAVANAVELS DRIVING SCHOOL dual-control vehicle equipped for safe motor training in Paruthippattu, Avadi.'
   },
   {
     src: '/imgs/img2.jpeg',
-    alt: 'SRI SARAVANAVELS DRIVING SCHOOL Fleet & Facility',
-    title: 'School Fleet & Premises',
+    alt: 'SRI SARAVANAVELS DRIVING SCHOOL Fleet & Facility (IMG 2)',
+    title: 'School Fleet & Premises (IMG 2)',
     caption: 'Well-maintained training vehicles and facilities for beginner and refresher driver classes.'
   },
   {
     src: '/imgs/img3.jpeg',
-    alt: 'Practical Road Training Guidance',
-    title: 'Practical Road Instruction',
+    alt: 'Practical Road Training Guidance (IMG 3)',
+    title: 'Practical Road Instruction (IMG 3)',
     caption: 'Hands-on practical road training under patient, expert supervision on Avadi roads.'
   },
   {
     src: '/imgs/img4.jpeg',
-    alt: 'Learner Practice & Safety Session',
-    title: 'Learner Confidence Session',
+    alt: 'Learner Practice & Safety Session (IMG 4)',
+    title: 'Learner Confidence Session (IMG 4)',
     caption: 'Dedicated training sessions helping male and female learners build lifelong driving confidence.'
+  },
+  {
+    src: '/imgs/img5.jpeg',
+    alt: 'Advanced Training & Maneuvering (IMG 5)',
+    title: 'Advanced Training & Maneuvering (IMG 5)',
+    caption: 'Comprehensive driving practice covering essential maneuvers, vehicle orientation, and road safety.'
+  },
+  {
+    src: '/imgs/img6.jpeg',
+    alt: 'Instructor-Guided Practice (IMG 6)',
+    title: 'Instructor-Guided Practice (IMG 6)',
+    caption: 'One-on-one personalized driving instruction to ensure complete learner confidence on the road.'
   }
 ];
 
@@ -58,7 +70,7 @@ export const About: React.FC = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
-          {/* Left Column: 4 Images in 1 Single Showcase Area Slot */}
+          {/* Left Column: 6 Images in 1 Single Showcase Area Slot */}
           <div className="lg:col-span-6 relative">
             <ScrollReveal delay={100}>
               <div className="relative mx-auto max-w-lg lg:max-w-none">
@@ -77,7 +89,7 @@ export const About: React.FC = () => {
                         GALLERY SHOWCASE
                       </span>
                       <span className="bg-[#F3EFE7] text-[#4B2E5E] border border-[#C9A86A]/40 text-xs font-mono font-bold px-2.5 py-0.5 rounded-full">
-                        {activeSlotIdx + 1} / 4
+                        {activeSlotIdx + 1} / {GALLERY_IMAGES.length}
                       </span>
                     </div>
 
@@ -147,9 +159,9 @@ export const About: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* 4 Clean Thumbnail Selectors in the SAME SINGLE AREA */}
+                  {/* 6 Clean Thumbnail Selectors in the SAME SINGLE AREA */}
                   <div className="mt-3 pt-3 border-t border-[#E8DEC8]">
-                    <div className="grid grid-cols-4 gap-2.5 w-full">
+                    <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-2.5 w-full">
                       {GALLERY_IMAGES.map((img, idx) => (
                         <button
                           key={idx}
