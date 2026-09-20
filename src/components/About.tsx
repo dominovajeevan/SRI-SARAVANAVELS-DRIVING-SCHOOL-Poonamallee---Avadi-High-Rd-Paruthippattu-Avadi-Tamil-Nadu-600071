@@ -1,76 +1,15 @@
-import React, { useState } from 'react';
-import { ArrowRight, MapPin, CheckCircle, UserCheck, Sparkles, Maximize2, ChevronLeft, ChevronRight, Camera } from 'lucide-react';
-import { LightboxModal, type LightboxImage } from './LightboxModal';
+import React from 'react';
+import { ArrowRight, MapPin, CheckCircle, UserCheck, Sparkles, ShieldCheck, Award, ThumbsUp } from 'lucide-react';
 import { ScrollReveal } from './ScrollReveal';
 
-export const GALLERY_IMAGES: LightboxImage[] = [
-  {
-    src: '/images/img1.avif',
-    alt: 'SRI SARAVANAVELS DRIVING SCHOOL Training Vehicle (IMG 1)',
-    title: 'Primary Training Vehicle (IMG 1)',
-    caption: 'SRI SARAVANAVELS DRIVING SCHOOL dual-control vehicle equipped for safe motor training in Paruthippattu, Avadi.'
-  },
-  {
-    src: '/images/img2.jpeg',
-    alt: 'SRI SARAVANAVELS DRIVING SCHOOL Fleet & Facility (IMG 2)',
-    title: 'School Fleet & Premises (IMG 2)',
-    caption: 'Well-maintained training vehicles and facilities for beginner and refresher driver classes.'
-  },
-  {
-    src: '/images/img3.jpeg',
-    alt: 'Practical Road Training Guidance (IMG 3)',
-    title: 'Practical Road Instruction (IMG 3)',
-    caption: 'Hands-on practical road training under patient, expert supervision on Avadi roads.'
-  },
-  {
-    src: '/images/img4.jpeg',
-    alt: 'Learner Practice & Safety Session (IMG 4)',
-    title: 'Learner Confidence Session (IMG 4)',
-    caption: 'Dedicated training sessions helping male and female learners build lifelong driving confidence.'
-  },
-  {
-    src: '/images/img5.jpeg',
-    alt: 'Advanced Training & Maneuvering (IMG 5)',
-    title: 'Advanced Training & Maneuvering (IMG 5)',
-    caption: 'Comprehensive driving practice covering essential maneuvers, vehicle orientation, and road safety.'
-  },
-  {
-    src: '/images/img6.jpeg',
-    alt: 'Instructor-Guided Practice (IMG 6)',
-    title: 'Instructor-Guided Practice (IMG 6)',
-    caption: 'One-on-one personalized driving instruction to ensure complete learner confidence on the road.'
-  }
-];
-
 export const About: React.FC = () => {
-  const [activeSlotIdx, setActiveSlotIdx] = useState(0);
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-  const [lightboxIdx, setLightboxIdx] = useState(0);
-
-  const handleOpenLightbox = (idx: number = activeSlotIdx) => {
-    setLightboxIdx(idx);
-    setIsLightboxOpen(true);
-  };
-
-  const handlePrev = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setActiveSlotIdx((prev) => (prev === 0 ? GALLERY_IMAGES.length - 1 : prev - 1));
-  };
-
-  const handleNext = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setActiveSlotIdx((prev) => (prev === GALLERY_IMAGES.length - 1 ? 0 : prev + 1));
-  };
-
-  const activeImg = GALLERY_IMAGES[activeSlotIdx];
-
   return (
     <section id="about" className="py-20 lg:py-28 bg-[#FAF7F2] bg-celestial-pattern relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
-          {/* Left Column: 6 Images in 1 Single Showcase Area Slot */}
+          {/* Left Column: Premium Brand Highlights & Academy Overview Card */}
           <div className="lg:col-span-6 relative">
             <ScrollReveal delay={100}>
               <div className="relative mx-auto max-w-lg lg:max-w-none">
@@ -78,109 +17,61 @@ export const About: React.FC = () => {
                 {/* Frame Glow Effect */}
                 <div className="absolute -inset-2 bg-gradient-to-r from-[#C9A86A]/30 to-[#72548C]/25 rounded-3xl blur-xl pointer-events-none" />
 
-                {/* Single Showcase Area Container */}
-                <div className="relative bg-white border-2 border-[#C9A86A]/70 rounded-3xl p-4 sm:p-5 shadow-2xl overflow-hidden group">
+                {/* Brand Overview Card */}
+                <div className="relative bg-[#4B2E5E] text-[#FAF7F2] border-2 border-[#C9A86A]/70 rounded-3xl p-6 sm:p-8 shadow-2xl overflow-hidden">
                   
-                  {/* Top Bar inside Showcase Area */}
-                  <div className="flex items-center justify-between gap-2 mb-3 pb-2.5 border-b border-[#E8DEC8]">
-                    <div className="flex items-center gap-2">
-                      <span className="bg-[#4B2E5E] text-[#FAF7F2] border border-[#C9A86A]/60 text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
-                        <Camera className="w-3.5 h-3.5 text-[#C9A86A]" />
-                        GALLERY SHOWCASE
-                      </span>
-                      <span className="bg-[#F3EFE7] text-[#4B2E5E] border border-[#C9A86A]/40 text-xs font-mono font-bold px-2.5 py-0.5 rounded-full">
-                        {activeSlotIdx + 1} / {GALLERY_IMAGES.length}
-                      </span>
+                  {/* Decorative Subtle Celestial Ring */}
+                  <div className="absolute -top-12 -right-12 w-48 h-48 bg-[#C9A86A]/20 rounded-full blur-2xl pointer-events-none" />
+
+                  <div className="relative z-10 space-y-6">
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FAF7F2]/10 border border-[#C9A86A]/60 text-[#E7D4A8] text-xs font-bold uppercase tracking-wider">
+                      <Sparkles className="w-4 h-4 text-[#C9A86A]" />
+                      <span>EXCELLENCE IN DRIVING INSTRUCTION</span>
                     </div>
 
-                    <button
-                      onClick={() => handleOpenLightbox(activeSlotIdx)}
-                      className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-[#4B2E5E] bg-[#F3EFE7] hover:bg-[#C9A86A] hover:text-[#27232A] px-3 py-1 rounded-full border border-[#C9A86A]/40 transition-colors cursor-pointer"
-                      aria-label="Open Fullscreen Lightbox"
-                    >
-                      <Maximize2 className="w-3 h-3 text-[#C9A86A]" />
-                      <span>Fullscreen</span>
-                    </button>
-                  </div>
+                    <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                      Empowering Safe & Independent Drivers
+                    </h3>
 
-                  {/* Main Display Image inside Single Area */}
-                  <div
-                    onClick={() => handleOpenLightbox(activeSlotIdx)}
-                    className="relative w-full h-[260px] sm:h-[340px] rounded-2xl overflow-hidden cursor-pointer border border-[#E8DEC8] bg-[#4B2E5E]"
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        handleOpenLightbox(activeSlotIdx);
-                      }
-                    }}
-                    aria-label={`Click to open fullscreen view for ${activeImg.title}`}
-                  >
-                    <img
-                      key={activeSlotIdx}
-                      src={activeImg.src}
-                      alt={activeImg.alt}
-                      className="w-full h-full object-cover img-hover-zoom filter brightness-95 group-hover:brightness-100 transition-all duration-500"
-                    />
+                    <p className="text-sm sm:text-base text-[#FAF7F2]/90 leading-relaxed font-medium">
+                      At SRI SARAVANAVELS DRIVING SCHOOL, we prioritize student safety, vehicle mastery, and real-world road confidence through structured practical lessons.
+                    </p>
 
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent pointer-events-none" />
+                    {/* Features Grid inside Card */}
+                    <div className="grid grid-cols-2 gap-4 pt-2 border-t border-[#C9A86A]/30">
+                      <div className="space-y-1">
+                        <div className="flex items-center gap-2 text-[#E7D4A8] font-bold text-sm">
+                          <Award className="w-4 h-4 text-[#C9A86A]" />
+                          <span>10+ Years</span>
+                        </div>
+                        <span className="text-xs text-gray-300 block">Established 2013</span>
+                      </div>
 
-                    {/* Previous Arrow Button */}
-                    <button
-                      onClick={handlePrev}
-                      className="absolute left-2 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/60 hover:bg-[#4B2E5E] text-white border border-[#C9A86A]/60 shadow-lg backdrop-blur-md transition-all duration-200 active:scale-90 z-10"
-                      aria-label="Previous Image"
-                    >
-                      <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
-                    </button>
+                      <div className="space-y-1">
+                        <div className="flex items-center gap-2 text-[#E7D4A8] font-bold text-sm">
+                          <ShieldCheck className="w-4 h-4 text-[#C9A86A]" />
+                          <span>Dual-Control</span>
+                        </div>
+                        <span className="text-xs text-gray-300 block">Safety Equipped</span>
+                      </div>
 
-                    {/* Next Arrow Button */}
-                    <button
-                      onClick={handleNext}
-                      className="absolute right-2 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/60 hover:bg-[#4B2E5E] text-white border border-[#C9A86A]/60 shadow-lg backdrop-blur-md transition-all duration-200 active:scale-90 z-10"
-                      aria-label="Next Image"
-                    >
-                      <ChevronRight className="w-5 h-5 stroke-[2.5]" />
-                    </button>
+                      <div className="space-y-1">
+                        <div className="flex items-center gap-2 text-[#E7D4A8] font-bold text-sm">
+                          <UserCheck className="w-4 h-4 text-[#C9A86A]" />
+                          <span>Certified</span>
+                        </div>
+                        <span className="text-xs text-gray-300 block">Patient Instructors</span>
+                      </div>
 
-                    {/* Expand Badge Prompt */}
-                    <div className="absolute top-3 right-3 bg-black/60 text-white px-2.5 py-1 rounded-full text-[10px] font-bold backdrop-blur-md flex items-center gap-1 group-hover:bg-[#C9A86A] group-hover:text-[#27232A] transition-colors">
-                      <Maximize2 className="w-3 h-3" />
-                      <span>Click to Expand</span>
+                      <div className="space-y-1">
+                        <div className="flex items-center gap-2 text-[#E7D4A8] font-bold text-sm">
+                          <ThumbsUp className="w-4 h-4 text-[#C9A86A]" />
+                          <span>Confidential</span>
+                        </div>
+                        <span className="text-xs text-gray-300 block">Women Driver Focus</span>
+                      </div>
                     </div>
 
-                    {/* Image Title inside slot */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white pointer-events-none">
-                      <span className="block text-xs font-extrabold text-[#E7D4A8]">
-                        {activeImg.title}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* 6 Clean Thumbnail Selectors in the SAME SINGLE AREA */}
-                  <div className="mt-3 pt-3 border-t border-[#E8DEC8]">
-                    <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-2.5 w-full">
-                      {GALLERY_IMAGES.map((img, idx) => (
-                        <button
-                          key={idx}
-                          onClick={() => setActiveSlotIdx(idx)}
-                          className={`relative rounded-xl overflow-hidden border-2 transition-all duration-200 h-16 sm:h-20 w-full cursor-pointer ${
-                            activeSlotIdx === idx
-                              ? 'border-[#C9A86A] ring-2 ring-[#C9A86A]/40 scale-105 shadow-glow-gold'
-                              : 'border-[#E8DEC8] opacity-70 hover:opacity-100'
-                          }`}
-                          aria-label={`View Image ${idx + 1}`}
-                        >
-                          <img
-                            src={img.src}
-                            alt={img.alt}
-                            className="w-full h-full object-cover"
-                          />
-                        </button>
-                      ))}
-                    </div>
                   </div>
 
                 </div>
@@ -263,15 +154,6 @@ export const About: React.FC = () => {
         </div>
 
       </div>
-
-      {/* Lightbox Modal */}
-      <LightboxModal
-        isOpen={isLightboxOpen}
-        currentIndex={lightboxIdx}
-        images={GALLERY_IMAGES}
-        onClose={() => setIsLightboxOpen(false)}
-        onNavigate={(newIdx) => setLightboxIdx(newIdx)}
-      />
     </section>
   );
 };
