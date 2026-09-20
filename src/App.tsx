@@ -3,7 +3,6 @@ import { Hero } from './components/Hero';
 import { HeroStats } from './components/HeroStats';
 import { About } from './components/About';
 import { Services } from './components/Services';
-import { FeaturedBanner } from './components/FeaturedBanner';
 import { Courses } from './components/Courses';
 import { LearningProcess } from './components/LearningProcess';
 import { WhyChooseUs } from './components/WhyChooseUs';
@@ -28,7 +27,6 @@ export function App() {
         <HeroStats />
         <About />
         <Services />
-        <FeaturedBanner />
         <Courses />
         <LearningProcess />
         <WhyChooseUs />
