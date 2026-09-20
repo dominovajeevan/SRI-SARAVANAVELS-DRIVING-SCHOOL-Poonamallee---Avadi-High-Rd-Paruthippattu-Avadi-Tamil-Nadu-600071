@@ -152,7 +152,6 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({ isOpen, onClose, ini
                 >
                   <option value="Motor Training">Motor Training (Four Wheeler)</option>
                   <option value="Motor Training for Two Wheelers">Motor Training for Two Wheelers</option>
-                  <option value="Auto Rickshaw Motor Training">Auto Rickshaw Motor Training</option>
                   <option value="Driving License Consultation">Driving License Consultation</option>
                   <option value="Women Driver Training">Women Driver Training</option>
                   <option value="Other">Other Custom Enquiry</option>

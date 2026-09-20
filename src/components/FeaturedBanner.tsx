@@ -9,7 +9,7 @@ export const FeaturedBanner: React.FC = () => {
       {/* Celestial Background Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/banner.png"
+          src="/imgs/BANNER.jpeg"
           alt="Automotive Visual Background"
           loading="lazy"
           className="w-full h-full object-cover object-center filter brightness-40 contrast-125 img-hover-zoom"

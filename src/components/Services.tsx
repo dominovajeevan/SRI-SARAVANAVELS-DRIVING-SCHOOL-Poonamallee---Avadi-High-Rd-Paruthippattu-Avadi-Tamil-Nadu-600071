@@ -1,5 +1,5 @@
 import React from 'react';
-import { Car, Bike, Compass, FileCheck2, Users, ArrowUpRight } from 'lucide-react';
+import { Car, Bike, FileCheck2, Users, ArrowUpRight } from 'lucide-react';
 import type { ServiceItem } from '../types';
 import { ScrollReveal } from './ScrollReveal';
 
@@ -28,19 +28,8 @@ export const Services: React.FC = () => {
       altText: "Two wheeler motor training"
     },
     {
-      id: "auto-rickshaw-training",
-      number: "03",
-      title: "Auto Rickshaw Motor Training",
-      description: "Specialized motor training for learners interested in auto-rickshaw driving and commercial three-wheeler vehicle maneuvering.",
-      iconName: "Compass",
-      icon: Compass,
-      badge: "Three Wheeler",
-      imageSrc: "/imgs/three-wheeler-training.webp",
-      altText: "Auto rickshaw motor training"
-    },
-    {
       id: "license-consultation",
-      number: "04",
+      number: "03",
       title: "Driving License Consultation",
       description: "Guidance and consultation related to the driving license process and licensing requirements.",
       iconName: "FileCheck2",
@@ -51,7 +40,7 @@ export const Services: React.FC = () => {
     },
     {
       id: "women-driver-training",
-      number: "05",
+      number: "04",
       title: "Women Driver Training",
       description: "Training and support for women learners, with a focus on confidence, practical skills and safe driving.",
       iconName: "Users",

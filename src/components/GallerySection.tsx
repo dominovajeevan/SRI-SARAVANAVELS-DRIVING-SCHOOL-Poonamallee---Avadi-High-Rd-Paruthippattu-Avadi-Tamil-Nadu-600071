@@ -27,6 +27,18 @@ export const GALLERY_IMAGES: LightboxImage[] = [
     alt: 'Learner Practice & Safety Session (IMG 4)',
     title: 'Learner Confidence Session (IMG 4)',
     caption: 'Dedicated training sessions helping male and female learners build lifelong driving confidence.'
+  },
+  {
+    src: '/imgs/img5.jpeg',
+    alt: 'SRI SARAVANAVELS DRIVING SCHOOL Training Session (IMG 5)',
+    title: 'Advanced Training & Maneuvering (IMG 5)',
+    caption: 'Comprehensive driving practice covering essential maneuvers, vehicle orientation, and road safety.'
+  },
+  {
+    src: '/imgs/img6.jpeg',
+    alt: 'SRI SARAVANAVELS DRIVING SCHOOL Instructor Guidance (IMG 6)',
+    title: 'Instructor-Guided Practice (IMG 6)',
+    caption: 'One-on-one personalized driving instruction to ensure complete learner confidence on the road.'
   }
 ];
 
@@ -67,7 +79,7 @@ export const GallerySection: React.FC = () => {
               Our Training <span className="gradient-text-gold">Gallery</span>
             </h2>
             <p className="text-[#665E6E] text-base sm:text-lg">
-              Explore all 4 training photos in a single interactive gallery showcase. Click any image to view in fullscreen lightbox!
+              Explore all 6 training photos in a single interactive gallery showcase. Click any image to view in fullscreen lightbox!
             </p>
           </div>
         </ScrollReveal>
@@ -158,15 +170,15 @@ export const GallerySection: React.FC = () => {
               </div>
             </div>
 
-            {/* Bottom 4-Thumbnail Strip Inside the SAME Slot */}
+            {/* Bottom 6-Thumbnail Strip Inside the SAME Slot */}
             <div className="mt-4 pt-4 border-t border-[#E8DEC8] flex flex-col sm:flex-row items-center justify-between gap-3">
               <span className="text-xs font-bold text-[#4B2E5E] uppercase tracking-wider flex items-center gap-1.5">
                 <Layers className="w-4 h-4 text-[#C9A86A]" />
-                Select Photo Slot (4 Images):
+                Select Photo Slot (6 Images):
               </span>
 
-              {/* 4 Thumbnail Buttons */}
-              <div className="grid grid-cols-4 gap-2 sm:gap-3 w-full sm:w-auto">
+              {/* 6 Thumbnail Buttons */}
+              <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-3 w-full sm:w-auto">
                 {GALLERY_IMAGES.map((img, idx) => (
                   <button
                     key={idx}
