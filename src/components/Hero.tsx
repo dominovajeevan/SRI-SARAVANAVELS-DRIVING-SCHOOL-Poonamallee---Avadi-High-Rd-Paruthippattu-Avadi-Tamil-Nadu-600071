@@ -9,7 +9,7 @@ export const Hero: React.FC = () => {
       {/* Full-Width Cinematic Driving Banner Background */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/imgs/BANNER.jpeg"
+          src="/images/banner.jpeg"
           alt="Home Page Hero Banner"
           loading="eager"
           className="w-full h-full object-cover object-center scale-105 filter brightness-90 contrast-110"

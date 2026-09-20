@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-4 space-y-4">
             <a href="#hero" className="flex items-center gap-3 group">
               <img
-                src="/imgs/logo.png"
+                src="/images/logo.png"
                 alt="SRI SARAVANAVELS DRIVING SCHOOL"
                 className="h-10 sm:h-11 w-auto object-contain bg-white p-1 rounded-lg shadow-glow-gold"
               />

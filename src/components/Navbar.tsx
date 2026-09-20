@@ -38,7 +38,7 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-3 group">
             <a href="#hero" className="flex items-center gap-3">
               <img
-                src="/imgs/logo.png"
+                src="/images/logo.png"
                 alt="SRI SARAVANAVELS DRIVING SCHOOL"
                 className="h-10 sm:h-11 w-auto object-contain group-hover:scale-105 transition-transform duration-300 rounded-lg"
               />

@@ -6,7 +6,7 @@ import { ScrollReveal } from './ScrollReveal';
 export const GALLERY_ITEMS: LightboxItem[] = [
   // 1. IMG 1
   {
-    src: '/imgs/img1.avif',
+    src: '/images/img1.avif',
     alt: 'Training Vehicle (IMG 1)',
     title: 'Primary Training Vehicle (IMG 1)',
     caption: 'Dual-control training vehicle equipped for safe motor instruction.',
@@ -14,7 +14,7 @@ export const GALLERY_ITEMS: LightboxItem[] = [
   },
   // 2. IMG 2
   {
-    src: '/imgs/img2.jpeg',
+    src: '/images/img2.jpeg',
     alt: 'Fleet & Premises (IMG 2)',
     title: 'School Fleet & Premises (IMG 2)',
     caption: 'Well-maintained training vehicles and facilities for beginner and refresher driver classes.',
@@ -22,7 +22,7 @@ export const GALLERY_ITEMS: LightboxItem[] = [
   },
   // 3. IMG 3
   {
-    src: '/imgs/img3.jpeg',
+    src: '/images/img3.jpeg',
     alt: 'Practical Road Instruction (IMG 3)',
     title: 'Practical Road Instruction (IMG 3)',
     caption: 'Hands-on practical road training under patient, expert supervision.',
@@ -30,7 +30,7 @@ export const GALLERY_ITEMS: LightboxItem[] = [
   },
   // 4. IMG 4
   {
-    src: '/imgs/img4.jpeg',
+    src: '/images/img4.jpeg',
     alt: 'Learner Practice Session (IMG 4)',
     title: 'Learner Confidence Session (IMG 4)',
     caption: 'Dedicated training sessions helping male and female learners build lifelong driving confidence.',
@@ -38,7 +38,7 @@ export const GALLERY_ITEMS: LightboxItem[] = [
   },
   // 5. IMG 5
   {
-    src: '/imgs/img5.jpeg',
+    src: '/images/img5.jpeg',
     alt: 'Advanced Training & Maneuvering (IMG 5)',
     title: 'Advanced Training & Maneuvering (IMG 5)',
     caption: 'Comprehensive driving practice covering essential maneuvers, vehicle orientation, and road safety.',
@@ -46,7 +46,7 @@ export const GALLERY_ITEMS: LightboxItem[] = [
   },
   // 6. IMG 6
   {
-    src: '/imgs/img6.jpeg',
+    src: '/images/img6.jpeg',
     alt: 'Instructor-Guided Practice (IMG 6)',
     title: 'Instructor-Guided Practice (IMG 6)',
     caption: 'One-on-one personalized driving instruction to ensure complete learner confidence on the road.',
@@ -54,8 +54,8 @@ export const GALLERY_ITEMS: LightboxItem[] = [
   },
   // 7. VIDEO 1
   {
-    src: '/imgs/img1.mp4',
-    poster: '/imgs/img1.avif',
+    src: '/images/img1.mp4',
+    poster: '/images/img1.avif',
     alt: 'Practical Driving Demonstration (Video 1)',
     title: 'Practical Driving Demonstration (Video 1)',
     caption: 'Video demonstration of vehicle control and smooth acceleration technique.',
@@ -63,8 +63,8 @@ export const GALLERY_ITEMS: LightboxItem[] = [
   },
   // 8. VIDEO 2
   {
-    src: '/imgs/img2.mp4',
-    poster: '/imgs/img2.jpeg',
+    src: '/images/img2.mp4',
+    poster: '/images/img2.jpeg',
     alt: 'Traffic Handling Guidance (Video 2)',
     title: 'Traffic Handling & Steering (Video 2)',
     caption: 'Practical video session showing traffic navigation and steering control.',
@@ -72,8 +72,8 @@ export const GALLERY_ITEMS: LightboxItem[] = [
   },
   // 9. VIDEO 3
   {
-    src: '/imgs/img3.mp4',
-    poster: '/imgs/img3.jpeg',
+    src: '/images/img3.mp4',
+    poster: '/images/img3.jpeg',
     alt: 'Parking & Reversing Skills (Video 3)',
     title: 'Parking & Reversing Skills (Video 3)',
     caption: 'Guided video lesson covering reverse maneuver and parking positioning.',
@@ -81,8 +81,8 @@ export const GALLERY_ITEMS: LightboxItem[] = [
   },
   // 10. VIDEO 4
   {
-    src: '/imgs/img4.mp4',
-    poster: '/imgs/img4.jpeg',
+    src: '/images/img4.mp4',
+    poster: '/images/img4.jpeg',
     alt: 'Clutch & Gear Synchronization (Video 4)',
     title: 'Clutch & Gear Synchronization (Video 4)',
     caption: 'Step-by-step practical video on smooth gear shift and clutch balance.',

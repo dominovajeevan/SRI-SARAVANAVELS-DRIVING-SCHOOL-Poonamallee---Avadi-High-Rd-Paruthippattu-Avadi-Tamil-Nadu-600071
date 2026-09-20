@@ -13,7 +13,7 @@ export const Services: React.FC = () => {
       iconName: "Car",
       icon: Car,
       badge: "Four Wheeler",
-      imageSrc: "/imgs/four-wheeler-training.webp",
+      imageSrc: "/images/four-wheeler-training.webp",
       altText: "Four wheeler driving training with instructor"
     },
     {
@@ -24,7 +24,7 @@ export const Services: React.FC = () => {
       iconName: "Bike",
       icon: Bike,
       badge: "Two Wheeler",
-      imageSrc: "/imgs/two-wheeler-training.webp",
+      imageSrc: "/images/two-wheeler-training.webp",
       altText: "Two wheeler motor training"
     },
     {
@@ -35,7 +35,7 @@ export const Services: React.FC = () => {
       iconName: "FileCheck2",
       icon: FileCheck2,
       badge: "RTO Guidance",
-      imageSrc: "/imgs/rto-license-consultation.webp",
+      imageSrc: "/images/rto-license-consultation.webp",
       altText: "Driving license consultation and RTO guidance"
     },
     {
@@ -46,7 +46,7 @@ export const Services: React.FC = () => {
       iconName: "Users",
       icon: Users,
       badge: "Specialized Focus",
-      imageSrc: "/imgs/women-driver-training.webp",
+      imageSrc: "/images/women-driver-training.webp",
       altText: "Women driver training with professional instructor"
     }
   ];

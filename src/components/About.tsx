@@ -5,37 +5,37 @@ import { ScrollReveal } from './ScrollReveal';
 
 export const GALLERY_IMAGES: LightboxImage[] = [
   {
-    src: '/imgs/img1.avif',
+    src: '/images/img1.avif',
     alt: 'SRI SARAVANAVELS DRIVING SCHOOL Training Vehicle (IMG 1)',
     title: 'Primary Training Vehicle (IMG 1)',
     caption: 'SRI SARAVANAVELS DRIVING SCHOOL dual-control vehicle equipped for safe motor training in Paruthippattu, Avadi.'
   },
   {
-    src: '/imgs/img2.jpeg',
+    src: '/images/img2.jpeg',
     alt: 'SRI SARAVANAVELS DRIVING SCHOOL Fleet & Facility (IMG 2)',
     title: 'School Fleet & Premises (IMG 2)',
     caption: 'Well-maintained training vehicles and facilities for beginner and refresher driver classes.'
   },
   {
-    src: '/imgs/img3.jpeg',
+    src: '/images/img3.jpeg',
     alt: 'Practical Road Training Guidance (IMG 3)',
     title: 'Practical Road Instruction (IMG 3)',
     caption: 'Hands-on practical road training under patient, expert supervision on Avadi roads.'
   },
   {
-    src: '/imgs/img4.jpeg',
+    src: '/images/img4.jpeg',
     alt: 'Learner Practice & Safety Session (IMG 4)',
     title: 'Learner Confidence Session (IMG 4)',
     caption: 'Dedicated training sessions helping male and female learners build lifelong driving confidence.'
   },
   {
-    src: '/imgs/img5.jpeg',
+    src: '/images/img5.jpeg',
     alt: 'Advanced Training & Maneuvering (IMG 5)',
     title: 'Advanced Training & Maneuvering (IMG 5)',
     caption: 'Comprehensive driving practice covering essential maneuvers, vehicle orientation, and road safety.'
   },
   {
-    src: '/imgs/img6.jpeg',
+    src: '/images/img6.jpeg',
     alt: 'Instructor-Guided Practice (IMG 6)',
     title: 'Instructor-Guided Practice (IMG 6)',
     caption: 'One-on-one personalized driving instruction to ensure complete learner confidence on the road.'
