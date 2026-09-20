@@ -70,17 +70,17 @@ export const Services: React.FC = () => {
           </div>
         </ScrollReveal>
 
-        {/* Services Cards Flex Layout (Centered bottom row) */}
-        <div className="flex flex-wrap justify-center gap-8">
+        {/* Services Cards Grid Layout (Perfect 2x2 grid on desktop/tablet, 1-col on mobile) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {services.map((service, idx) => {
             const IconComponent = service.icon;
             return (
-              <ScrollReveal key={service.id} delay={idx * 100} className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md lg:max-w-none flex">
+              <ScrollReveal key={service.id} delay={idx * 100} className="flex h-full">
                 <div
-                  className="group relative bg-white hover:bg-[#FAF7F2] border border-[#E8DEC8] hover:border-[#C9A86A] rounded-2xl overflow-hidden transition-all duration-300 shadow-celestial-card flex flex-col justify-between w-full"
+                  className="group relative bg-white hover:bg-[#FAF7F2] border border-[#E8DEC8] hover:border-[#C9A86A] rounded-2xl overflow-hidden transition-all duration-300 shadow-celestial-card flex flex-col justify-between w-full h-full"
                 >
                   {/* Top Image Banner */}
-                  <div className="relative w-full h-52 overflow-hidden bg-[#4B2E5E]/10">
+                  <div className="relative w-full h-52 overflow-hidden bg-[#4B2E5E]/10 shrink-0">
                     <img
                       src={service.imageSrc}
                       alt={service.altText}

@@ -1,51 +1,106 @@
 import React, { useState } from 'react';
-import { Sparkles, Maximize2, Camera, ChevronLeft, ChevronRight, Layers } from 'lucide-react';
-import { LightboxModal, type LightboxImage } from './LightboxModal';
+import { Sparkles, Maximize2, Camera, ChevronLeft, ChevronRight, Layers, Play, Video, Image as ImageIcon } from 'lucide-react';
+import { LightboxModal, type LightboxItem } from './LightboxModal';
 import { ScrollReveal } from './ScrollReveal';
 
-export const GALLERY_IMAGES: LightboxImage[] = [
+export const GALLERY_ITEMS: LightboxItem[] = [
+  // 1. IMG 1
   {
     src: '/imgs/img1.avif',
-    alt: 'SRI SARAVANAVELS DRIVING SCHOOL Training Vehicle (IMG 1)',
+    alt: 'Training Vehicle (IMG 1)',
     title: 'Primary Training Vehicle (IMG 1)',
-    caption: 'SRI SARAVANAVELS DRIVING SCHOOL dual-control vehicle equipped for safe motor training in Paruthippattu, Avadi.'
+    caption: 'Dual-control training vehicle equipped for safe motor instruction.',
+    type: 'image'
   },
+  // 2. IMG 2
   {
     src: '/imgs/img2.jpeg',
-    alt: 'SRI SARAVANAVELS DRIVING SCHOOL Fleet & Facility (IMG 2)',
+    alt: 'Fleet & Premises (IMG 2)',
     title: 'School Fleet & Premises (IMG 2)',
-    caption: 'Well-maintained training vehicles and facilities for beginner and refresher driver classes.'
+    caption: 'Well-maintained training vehicles and facilities for beginner and refresher driver classes.',
+    type: 'image'
   },
+  // 3. IMG 3
   {
     src: '/imgs/img3.jpeg',
-    alt: 'Practical Road Training Guidance (IMG 3)',
+    alt: 'Practical Road Instruction (IMG 3)',
     title: 'Practical Road Instruction (IMG 3)',
-    caption: 'Hands-on practical road training under patient, expert supervision on Avadi roads.'
+    caption: 'Hands-on practical road training under patient, expert supervision.',
+    type: 'image'
   },
+  // 4. IMG 4
   {
     src: '/imgs/img4.jpeg',
-    alt: 'Learner Practice & Safety Session (IMG 4)',
+    alt: 'Learner Practice Session (IMG 4)',
     title: 'Learner Confidence Session (IMG 4)',
-    caption: 'Dedicated training sessions helping male and female learners build lifelong driving confidence.'
+    caption: 'Dedicated training sessions helping male and female learners build lifelong driving confidence.',
+    type: 'image'
   },
+  // 5. IMG 5
   {
     src: '/imgs/img5.jpeg',
-    alt: 'SRI SARAVANAVELS DRIVING SCHOOL Training Session (IMG 5)',
+    alt: 'Advanced Training & Maneuvering (IMG 5)',
     title: 'Advanced Training & Maneuvering (IMG 5)',
-    caption: 'Comprehensive driving practice covering essential maneuvers, vehicle orientation, and road safety.'
+    caption: 'Comprehensive driving practice covering essential maneuvers, vehicle orientation, and road safety.',
+    type: 'image'
   },
+  // 6. IMG 6
   {
     src: '/imgs/img6.jpeg',
-    alt: 'SRI SARAVANAVELS DRIVING SCHOOL Instructor Guidance (IMG 6)',
+    alt: 'Instructor-Guided Practice (IMG 6)',
     title: 'Instructor-Guided Practice (IMG 6)',
-    caption: 'One-on-one personalized driving instruction to ensure complete learner confidence on the road.'
+    caption: 'One-on-one personalized driving instruction to ensure complete learner confidence on the road.',
+    type: 'image'
+  },
+  // 7. VIDEO 1
+  {
+    src: '/imgs/img1.mp4',
+    poster: '/imgs/img1.avif',
+    alt: 'Practical Driving Demonstration (Video 1)',
+    title: 'Practical Driving Demonstration (Video 1)',
+    caption: 'Video demonstration of vehicle control and smooth acceleration technique.',
+    type: 'video'
+  },
+  // 8. VIDEO 2
+  {
+    src: '/imgs/img2.mp4',
+    poster: '/imgs/img2.jpeg',
+    alt: 'Traffic Handling Guidance (Video 2)',
+    title: 'Traffic Handling & Steering (Video 2)',
+    caption: 'Practical video session showing traffic navigation and steering control.',
+    type: 'video'
+  },
+  // 9. VIDEO 3
+  {
+    src: '/imgs/img3.mp4',
+    poster: '/imgs/img3.jpeg',
+    alt: 'Parking & Reversing Skills (Video 3)',
+    title: 'Parking & Reversing Skills (Video 3)',
+    caption: 'Guided video lesson covering reverse maneuver and parking positioning.',
+    type: 'video'
+  },
+  // 10. VIDEO 4
+  {
+    src: '/imgs/img4.mp4',
+    poster: '/imgs/img4.jpeg',
+    alt: 'Clutch & Gear Synchronization (Video 4)',
+    title: 'Clutch & Gear Synchronization (Video 4)',
+    caption: 'Step-by-step practical video on smooth gear shift and clutch balance.',
+    type: 'video'
   }
 ];
 
 export const GallerySection: React.FC = () => {
+  const [filter, setFilter] = useState<'all' | 'photos' | 'videos'>('all');
   const [activeSlotIndex, setActiveSlotIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const filteredItems = GALLERY_ITEMS.filter(item => {
+    if (filter === 'photos') return item.type === 'image';
+    if (filter === 'videos') return item.type === 'video';
+    return true;
+  });
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
@@ -54,15 +109,16 @@ export const GallerySection: React.FC = () => {
 
   const handlePrevSlot = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setActiveSlotIndex((prev) => (prev === 0 ? GALLERY_IMAGES.length - 1 : prev - 1));
+    setActiveSlotIndex((prev) => (prev === 0 ? GALLERY_ITEMS.length - 1 : prev - 1));
   };
 
   const handleNextSlot = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setActiveSlotIndex((prev) => (prev === GALLERY_IMAGES.length - 1 ? 0 : prev + 1));
+    setActiveSlotIndex((prev) => (prev === GALLERY_ITEMS.length - 1 ? 0 : prev + 1));
   };
 
-  const currentImage = GALLERY_IMAGES[activeSlotIndex];
+  const currentItem = GALLERY_ITEMS[activeSlotIndex];
+  const isCurrentVideo = currentItem?.type === 'video';
 
   return (
     <section id="gallery" className="py-20 lg:py-28 bg-[#FAF7F2] bg-celestial-pattern relative overflow-hidden">
@@ -70,33 +126,69 @@ export const GallerySection: React.FC = () => {
         
         {/* Section Header */}
         <ScrollReveal>
-          <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+          <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
             <span className="text-xs font-bold uppercase tracking-widest text-[#4B2E5E] bg-[#F3EFE7] px-3.5 py-1.5 rounded-full border border-[#C9A86A]/40 shadow-sm inline-flex items-center gap-1.5">
               <Camera className="w-3.5 h-3.5 text-[#C9A86A]" />
-              VISUAL ACADEMY GALLERY
+              ACADEMY MEDIA GALLERY & SHOWCASE
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#4B2E5E] tracking-tight">
-              Our Training <span className="gradient-text-gold">Gallery</span>
+              Our Training <span className="gradient-text-gold">Showcase</span>
             </h2>
             <p className="text-[#665E6E] text-base sm:text-lg">
-              Explore all 6 training photos in a single interactive gallery showcase. Click any image to view in fullscreen lightbox!
+              Explore our complete training photos (IMG 1 to IMG 6) and practical videos in a single interactive gallery showcase. Click any photo or video to open fullscreen!
             </p>
+
+            {/* Category Filter Tabs */}
+            <div className="pt-4 flex items-center justify-center gap-2 sm:gap-3 flex-wrap">
+              <button
+                onClick={() => setFilter('all')}
+                className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                  filter === 'all'
+                    ? 'bg-[#4B2E5E] text-[#FAF7F2] border border-[#C9A86A] shadow-md'
+                    : 'bg-white text-[#665E6E] border border-[#E8DEC8] hover:border-[#C9A86A]'
+                }`}
+              >
+                All Media ({GALLERY_ITEMS.length})
+              </button>
+              <button
+                onClick={() => setFilter('photos')}
+                className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-1.5 ${
+                  filter === 'photos'
+                    ? 'bg-[#4B2E5E] text-[#FAF7F2] border border-[#C9A86A] shadow-md'
+                    : 'bg-white text-[#665E6E] border border-[#E8DEC8] hover:border-[#C9A86A]'
+                }`}
+              >
+                <ImageIcon className="w-3.5 h-3.5 text-[#C9A86A]" />
+                <span>Photos (6)</span>
+              </button>
+              <button
+                onClick={() => setFilter('videos')}
+                className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-1.5 ${
+                  filter === 'videos'
+                    ? 'bg-[#4B2E5E] text-[#FAF7F2] border border-[#C9A86A] shadow-md'
+                    : 'bg-white text-[#665E6E] border border-[#E8DEC8] hover:border-[#C9A86A]'
+                }`}
+              >
+                <Video className="w-3.5 h-3.5 text-[#C9A86A]" />
+                <span>Videos (4)</span>
+              </button>
+            </div>
           </div>
         </ScrollReveal>
 
-        {/* SINGLE UNIFIED GALLERY SLOT CONTAINER */}
+        {/* SINGLE FEATURED HERO SLOT CONTAINER */}
         <ScrollReveal delay={100}>
-          <div className="max-w-4xl mx-auto bg-white border-2 border-[#C9A86A]/70 rounded-3xl p-4 sm:p-6 shadow-2xl relative overflow-hidden group">
+          <div className="max-w-4xl mx-auto bg-white border-2 border-[#C9A86A]/70 rounded-3xl p-4 sm:p-6 shadow-2xl relative overflow-hidden group mb-14">
             
             {/* Top Info Bar inside the Single Slot */}
             <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-[#E8DEC8]">
               <div className="flex items-center gap-2">
                 <span className="bg-[#4B2E5E] text-[#FAF7F2] border border-[#C9A86A]/60 text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-sm flex items-center gap-1.5">
                   <Sparkles className="w-3.5 h-3.5 text-[#C9A86A]" />
-                  FLEET & TRAINING GALLERY
+                  FEATURED SHOWCASE
                 </span>
                 <span className="bg-[#F3EFE7] text-[#4B2E5E] border border-[#C9A86A]/40 text-xs font-mono font-bold px-3 py-1 rounded-full">
-                  IMG {activeSlotIndex + 1} OF {GALLERY_IMAGES.length}
+                  {isCurrentVideo ? 'VIDEO' : 'IMG'} {activeSlotIndex + 1} OF {GALLERY_ITEMS.length}
                 </span>
               </div>
 
@@ -110,7 +202,7 @@ export const GallerySection: React.FC = () => {
               </button>
             </div>
 
-            {/* Main Featured Image Display within the Single Slot */}
+            {/* Main Featured Media Display */}
             <div
               onClick={() => openLightbox(activeSlotIndex)}
               className="relative w-full h-[320px] sm:h-[460px] rounded-2xl overflow-hidden cursor-pointer border border-[#E8DEC8] shadow-inner bg-[#4B2E5E]"
@@ -122,32 +214,52 @@ export const GallerySection: React.FC = () => {
                   openLightbox(activeSlotIndex);
                 }
               }}
-              aria-label={`Click to open fullscreen view for ${currentImage.title}`}
+              aria-label={`Click to view ${currentItem.title}`}
             >
-              <img
-                key={activeSlotIndex}
-                src={currentImage.src}
-                alt={currentImage.alt}
-                className="w-full h-full object-cover img-hover-zoom filter brightness-95 group-hover:brightness-100 transition-all duration-500"
-              />
+              {isCurrentVideo ? (
+                <div className="relative w-full h-full">
+                  <video
+                    key={activeSlotIndex}
+                    src={currentItem.src}
+                    poster={currentItem.poster}
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover filter brightness-90 group-hover:brightness-100 transition-all duration-500"
+                  />
+                  {/* Subtle Play Overlay */}
+                  <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+                    <div className="w-16 h-16 rounded-full bg-[#4B2E5E]/90 border-2 border-[#C9A86A] flex items-center justify-center text-[#C9A86A] shadow-glow-purple transform group-hover:scale-110 transition-transform">
+                      <Play className="w-8 h-8 fill-[#C9A86A] ml-1" />
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <img
+                  key={activeSlotIndex}
+                  src={currentItem.src}
+                  alt={currentItem.alt}
+                  className="w-full h-full object-cover img-hover-zoom filter brightness-95 group-hover:brightness-100 transition-all duration-500"
+                />
+              )}
 
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
 
-              {/* Arrow Prev Button Inside Slot */}
+              {/* Arrow Prev Button */}
               <button
                 onClick={handlePrevSlot}
                 className="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/60 hover:bg-[#4B2E5E] text-white border border-[#C9A86A]/60 shadow-lg backdrop-blur-md transition-all duration-200 active:scale-90 hover:scale-105 z-10"
-                aria-label="Previous Image Slot"
+                aria-label="Previous Media Slot"
               >
                 <ChevronLeft className="w-6 h-6 stroke-[2.5]" />
               </button>
 
-              {/* Arrow Next Button Inside Slot */}
+              {/* Arrow Next Button */}
               <button
                 onClick={handleNextSlot}
                 className="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/60 hover:bg-[#4B2E5E] text-white border border-[#C9A86A]/60 shadow-lg backdrop-blur-md transition-all duration-200 active:scale-90 hover:scale-105 z-10"
-                aria-label="Next Image Slot"
+                aria-label="Next Media Slot"
               >
                 <ChevronRight className="w-6 h-6 stroke-[2.5]" />
               </button>
@@ -158,55 +270,143 @@ export const GallerySection: React.FC = () => {
                 <span>Tap to Expand Lightbox</span>
               </div>
 
-              {/* Image Title & Caption Inside Main View */}
+              {/* Image / Video Title & Caption */}
               <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7 text-white pointer-events-none space-y-1">
                 <div className="flex items-center gap-2 text-xs font-semibold text-[#E7D4A8]">
                   <Layers className="w-4 h-4 text-[#C9A86A]" />
-                  <span>IMG {activeSlotIndex + 1}: {currentImage.title}</span>
+                  <span>{isCurrentVideo ? 'VIDEO' : 'IMG'} {activeSlotIndex + 1}: {currentItem.title}</span>
                 </div>
                 <p className="text-xs sm:text-sm text-gray-200 line-clamp-2 leading-relaxed max-w-2xl">
-                  {currentImage.caption}
+                  {currentItem.caption}
                 </p>
               </div>
             </div>
 
-            {/* Bottom 6-Thumbnail Strip Inside the SAME Slot */}
+            {/* Bottom 10-Thumbnail Strip */}
             <div className="mt-4 pt-4 border-t border-[#E8DEC8] flex flex-col sm:flex-row items-center justify-between gap-3">
               <span className="text-xs font-bold text-[#4B2E5E] uppercase tracking-wider flex items-center gap-1.5">
                 <Layers className="w-4 h-4 text-[#C9A86A]" />
-                Select Photo Slot (6 Images):
+                Select Media Slot (10 Items):
               </span>
 
-              {/* 6 Thumbnail Buttons */}
-              <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-3 w-full sm:w-auto">
-                {GALLERY_IMAGES.map((img, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveSlotIndex(idx)}
-                    className={`relative rounded-xl overflow-hidden border-2 transition-all duration-200 h-16 sm:h-20 w-full sm:w-24 group/thumb cursor-pointer ${
-                      activeSlotIndex === idx
-                        ? 'border-[#C9A86A] ring-4 ring-[#C9A86A]/30 scale-105 shadow-glow-gold'
-                        : 'border-[#E8DEC8] opacity-70 hover:opacity-100 hover:border-[#4B2E5E]'
-                    }`}
-                    aria-label={`Switch to ${img.title}`}
-                  >
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      className="w-full h-full object-cover"
-                    />
-                    <span className={`absolute bottom-1 left-1/2 -translate-x-1/2 text-[9px] font-black uppercase px-1.5 py-0.5 rounded shadow-sm ${
-                      activeSlotIndex === idx
-                        ? 'bg-[#C9A86A] text-[#27232A]'
-                        : 'bg-[#4B2E5E]/80 text-white'
-                    }`}>
-                      IMG {idx + 1}
-                    </span>
-                  </button>
-                ))}
+              {/* 10 Thumbnail Buttons */}
+              <div className="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-2 scrollbar-none">
+                {GALLERY_ITEMS.map((item, idx) => {
+                  const isVid = item.type === 'video';
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveSlotIndex(idx)}
+                      className={`relative rounded-xl overflow-hidden border-2 transition-all duration-200 h-14 w-14 sm:h-16 sm:w-16 shrink-0 group/thumb cursor-pointer ${
+                        activeSlotIndex === idx
+                          ? 'border-[#C9A86A] ring-4 ring-[#C9A86A]/30 scale-105 shadow-glow-gold'
+                          : 'border-[#E8DEC8] opacity-70 hover:opacity-100 hover:border-[#4B2E5E]'
+                      }`}
+                      aria-label={`Switch to ${item.title}`}
+                    >
+                      <img
+                        src={isVid ? (item.poster || item.src) : item.src}
+                        alt={item.alt}
+                        className="w-full h-full object-cover"
+                      />
+                      {isVid && (
+                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                          <Play className="w-3.5 h-3.5 text-[#C9A86A] fill-[#C9A86A]" />
+                        </div>
+                      )}
+                      <span className={`absolute bottom-0.5 left-1/2 -translate-x-1/2 text-[8px] font-black uppercase px-1 rounded shadow-sm ${
+                        activeSlotIndex === idx
+                          ? 'bg-[#C9A86A] text-[#27232A]'
+                          : 'bg-[#4B2E5E]/80 text-white'
+                      }`}>
+                        {isVid ? 'VID' : 'IMG'} {idx + 1}
+                      </span>
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
+          </div>
+        </ScrollReveal>
+
+        {/* FULL RESPONSIVE GRID SHOWCASE FOR ALL MEDIA ITEMS */}
+        <ScrollReveal delay={200}>
+          <div className="mt-8">
+            <div className="flex items-center justify-between mb-6 border-b border-[#E8DEC8] pb-4">
+              <h3 className="text-xl font-bold text-[#4B2E5E]">
+                All Gallery Media ({filteredItems.length})
+              </h3>
+              <span className="text-xs text-[#665E6E]">
+                Click any item to view in full resolution lightbox
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {filteredItems.map((item) => {
+                const originalIndex = GALLERY_ITEMS.findIndex(g => g.src === item.src);
+                const isItemVideo = item.type === 'video';
+
+                return (
+                  <div
+                    key={item.src}
+                    onClick={() => openLightbox(originalIndex)}
+                    className="group relative bg-white border border-[#E8DEC8] hover:border-[#C9A86A] rounded-2xl overflow-hidden shadow-celestial-card hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col justify-between"
+                  >
+                    {/* Media Thumbnail Container */}
+                    <div className="relative w-full h-48 overflow-hidden bg-[#4B2E5E]/10">
+                      <img
+                        src={isItemVideo ? (item.poster || item.src) : item.src}
+                        alt={item.alt}
+                        className="w-full h-full object-cover img-hover-zoom transition-transform duration-500"
+                        loading="lazy"
+                      />
+
+                      {/* Video Play Overlay */}
+                      {isItemVideo && (
+                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/25 transition-colors">
+                          <div className="w-12 h-12 rounded-full bg-[#4B2E5E]/90 border border-[#C9A86A] flex items-center justify-center text-[#C9A86A] shadow-md group-hover:scale-110 transition-transform">
+                            <Play className="w-6 h-6 fill-[#C9A86A] ml-0.5" />
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Type Badge Overlay */}
+                      <span className="absolute top-3 left-3 text-[10px] font-extrabold uppercase tracking-wider text-white bg-[#4B2E5E]/90 backdrop-blur-md px-2.5 py-1 rounded-md border border-[#C9A86A]/40 flex items-center gap-1 shadow-sm">
+                        {isItemVideo ? (
+                          <>
+                            <Video className="w-3 h-3 text-[#C9A86A]" />
+                            <span>VIDEO {originalIndex + 1}</span>
+                          </>
+                        ) : (
+                          <>
+                            <ImageIcon className="w-3 h-3 text-[#C9A86A]" />
+                            <span>IMG {originalIndex + 1}</span>
+                          </>
+                        )}
+                      </span>
+                    </div>
+
+                    {/* Card Information */}
+                    <div className="p-4 flex flex-col flex-1 justify-between">
+                      <div>
+                        <h4 className="text-sm font-bold text-[#4B2E5E] group-hover:text-[#72548C] transition-colors leading-snug mb-1">
+                          {item.title}
+                        </h4>
+                        <p className="text-xs text-[#665E6E] line-clamp-2 leading-relaxed">
+                          {item.caption}
+                        </p>
+                      </div>
+
+                      <div className="mt-3 pt-3 border-t border-[#E8DEC8] flex items-center justify-between text-[11px] font-bold text-[#4B2E5E] group-hover:text-[#C9A86A] transition-colors">
+                        <span>{isItemVideo ? 'Play Video' : 'View Full Image'}</span>
+                        <Maximize2 className="w-3.5 h-3.5" />
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </ScrollReveal>
 
@@ -216,7 +416,7 @@ export const GallerySection: React.FC = () => {
       <LightboxModal
         isOpen={isLightboxOpen}
         currentIndex={lightboxIndex}
-        images={GALLERY_IMAGES}
+        images={GALLERY_ITEMS}
         onClose={() => setIsLightboxOpen(false)}
         onNavigate={(newIdx) => setLightboxIndex(newIdx)}
       />
