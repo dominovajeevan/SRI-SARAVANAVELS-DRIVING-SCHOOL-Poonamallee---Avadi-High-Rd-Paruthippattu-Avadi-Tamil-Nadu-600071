@@ -2,6 +2,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { HeroStats } from './components/HeroStats';
 import { About } from './components/About';
+import { SchoolPhotos } from './components/SchoolPhotos';
 import { Services } from './components/Services';
 import { Courses } from './components/Courses';
 import { LearningProcess } from './components/LearningProcess';
@@ -26,6 +27,7 @@ export function App() {
         <Hero />
         <HeroStats />
         <About />
+        <SchoolPhotos />
         <Services />
         <Courses />
         <LearningProcess />
