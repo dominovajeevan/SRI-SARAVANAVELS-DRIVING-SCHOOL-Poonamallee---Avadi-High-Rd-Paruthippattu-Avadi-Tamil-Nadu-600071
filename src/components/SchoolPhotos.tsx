@@ -14,7 +14,7 @@ export const SCHOOL_PHOTOS: SchoolPhotoItem[] = [
   {
     id: 'outlook1',
     src: '/imgs/school/outlook1.jpg',
-    alt: 'Radha Driving School main entrance outlook',
+    alt: 'SRI SARAVANAVELS Driving School main entrance outlook',
     title: 'Driving School Main Exterior',
     category: 'Facility Outlook'
   },
@@ -205,7 +205,7 @@ export const SchoolPhotos: React.FC = () => {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#C9A86A]/8 rounded-full filter blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
@@ -217,7 +217,7 @@ export const SchoolPhotos: React.FC = () => {
               OUR DRIVING <span className="text-[#0E3B2E]">SCHOOL</span>
             </h2>
             <p className="text-lg font-semibold text-[#0E3B2E]/90">
-              Take a look at Radha Driving School
+              Take a look at SRI SARAVANAVELS Driving School
             </p>
             <p className="text-[#665E6E] text-base sm:text-lg max-w-2xl mx-auto">
               Explore our driving school and training environment.
@@ -228,7 +228,7 @@ export const SchoolPhotos: React.FC = () => {
         {/* SINGLE FEATURED HERO ALBUM SLOT CONTAINER (Matching Gallery Showcase Format) */}
         <ScrollReveal delay={100}>
           <div className="max-w-4xl mx-auto bg-white border-2 border-[#C9A86A]/70 rounded-3xl p-4 sm:p-6 shadow-2xl relative overflow-hidden group mb-14">
-            
+
             {/* Top Info Bar inside the Single Slot */}
             <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-[#E8DEC8]">
               <div className="flex items-center gap-2">
@@ -324,11 +324,10 @@ export const SchoolPhotos: React.FC = () => {
                   <button
                     key={photo.id}
                     onClick={() => setActiveSlotIndex(idx)}
-                    className={`relative rounded-xl overflow-hidden border-2 transition-all duration-200 h-14 w-14 sm:h-16 sm:w-16 shrink-0 group/thumb cursor-pointer ${
-                      activeSlotIndex === idx
+                    className={`relative rounded-xl overflow-hidden border-2 transition-all duration-200 h-14 w-14 sm:h-16 sm:w-16 shrink-0 group/thumb cursor-pointer ${activeSlotIndex === idx
                         ? 'border-[#C9A86A] ring-4 ring-[#C9A86A]/30 scale-105 shadow-glow-gold'
                         : 'border-[#E8DEC8] opacity-70 hover:opacity-100 hover:border-[#0E3B2E]'
-                    }`}
+                      }`}
                     aria-label={`Switch to Photo ${idx + 1}`}
                   >
                     <img
@@ -336,11 +335,10 @@ export const SchoolPhotos: React.FC = () => {
                       alt={photo.alt}
                       className="w-full h-full object-cover"
                     />
-                    <span className={`absolute bottom-0.5 left-1/2 -translate-x-1/2 text-[8px] font-black uppercase px-1 rounded shadow-sm ${
-                      activeSlotIndex === idx
+                    <span className={`absolute bottom-0.5 left-1/2 -translate-x-1/2 text-[8px] font-black uppercase px-1 rounded shadow-sm ${activeSlotIndex === idx
                         ? 'bg-[#C9A86A] text-[#27232A]'
                         : 'bg-[#0E3B2E]/85 text-white'
-                    }`}>
+                      }`}>
                       {idx + 1}
                     </span>
                   </button>
@@ -356,19 +354,17 @@ export const SchoolPhotos: React.FC = () => {
       {/* FULLSCREEN COMPLETE PHOTO ALBUM LIGHTBOX MODAL */}
       {(isLightboxOpen || isClosing) && currentPhoto && (
         <div
-          className={`fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/95 backdrop-blur-md transition-opacity duration-200 ${
-            isClosing ? 'opacity-0' : 'animate-lightboxBackdrop'
-          }`}
+          className={`fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/95 backdrop-blur-md transition-opacity duration-200 ${isClosing ? 'opacity-0' : 'animate-lightboxBackdrop'
+            }`}
           onClick={handleClose}
           role="dialog"
           aria-modal="true"
-          aria-label="Radha Driving School Fullscreen Photo Album"
+          aria-label="SRI SARAVANAVELS Driving School Fullscreen Photo Album"
         >
           {/* Lightbox Album Container */}
           <div
-            className={`relative w-full max-w-5xl h-full max-h-[92vh] flex flex-col items-center justify-between transition-all duration-200 ${
-              isClosing ? 'scale-95 opacity-0' : 'animate-lightboxScale'
-            }`}
+            className={`relative w-full max-w-5xl h-full max-h-[92vh] flex flex-col items-center justify-between transition-all duration-200 ${isClosing ? 'scale-95 opacity-0' : 'animate-lightboxScale'
+              }`}
             onClick={(e) => e.stopPropagation()}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
@@ -385,7 +381,7 @@ export const SchoolPhotos: React.FC = () => {
                     {currentPhoto.title}
                   </span>
                   <span className="text-[10px] text-[#C9A86A] uppercase tracking-wider font-semibold">
-                    Radha Driving School Album
+                    SRI SARAVANAVELS Driving School Album
                   </span>
                 </div>
               </div>
@@ -440,11 +436,10 @@ export const SchoolPhotos: React.FC = () => {
                   <button
                     key={photo.id}
                     onClick={() => setActiveSlotIndex(idx)}
-                    className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-lg overflow-hidden border-2 transition-all duration-200 shrink-0 cursor-pointer ${
-                      activeSlotIndex === idx
+                    className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-lg overflow-hidden border-2 transition-all duration-200 shrink-0 cursor-pointer ${activeSlotIndex === idx
                         ? 'border-[#C9A86A] scale-105 ring-2 ring-[#C9A86A]/50 shadow-glow-gold'
                         : 'border-white/20 opacity-50 hover:opacity-100'
-                    }`}
+                      }`}
                     aria-label={`Switch to Photo ${idx + 1}`}
                   >
                     <img
